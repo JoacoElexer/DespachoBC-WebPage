@@ -1,0 +1,40 @@
+---
+const navItems = [
+    { name: 'Inicio', href: '#'},
+    { name: 'Servicios', href: '#'},
+    { name: 'Nosotros', href: '#'}
+]
+const serviceItems = [
+    { name: 'Servicio Contable', href: '#'},
+    { name: 'Servicio Fiscal', href: '#'},
+    { name: 'Capacitación', href: '#'},
+    { name: 'Recursos Humanos', href: '#'},
+    { name: 'Servicios para trabajadores', href: '#'},
+    { name: 'Servicios para empresas', href: '#'},
+    { name: 'Derecho Laboral', href: '#'},
+    { name: 'Derecho Corporativo', href: '#'},
+]
+const contactLink = { name: 'Contacto', href: '#'};
+const logo = '/logo/Logo_BC_transparente.png';
+const whatsappIcon = '/Icons/whatsapp-logo.png';
+---
+
+<style>
+    @import url('../styles/componentStyles/NavBarStyles.css');
+</style>
+<div class="navbarWrapper">
+    <div class="navbarLinksContainer">
+        <img src={logo} alt="MainLogo" class="navbarLogo"/>
+        <div class="listContainer">
+            <ul class="links">
+                {navItems.map(item => (
+                    <li><a href={item.href}>{item.name}</a></li>
+                ))}
+            </ul>
+        </div>
+    </div>
+    <div class="navbarContactBtn">
+        <a href={contactLink.href}>{contactLink.name}</a>
+        <img src={whatsappIcon} alt="WhatsAppIcon" class="whatsappIcon"/>
+    </div>
+</div>

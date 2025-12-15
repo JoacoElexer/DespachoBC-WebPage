@@ -1,10 +1,22 @@
 ---
-import BaseLayout from "../layouts/indexLayout.astro";
+import IndexLayout from "../layouts/indexLayout.astro";
+import "../styles/sectionStyles/hero.css";
 ---
 
-<BaseLayout title="Despacho BC">
+<IndexLayout title="Despacho BC">
 	<section class="hero">
+		<div class="shapeWrapper">
+			<div class="shape shape-1"></div>
+			<div class="shape shape-2"></div>
+		</div>
 
+		<div class="heroContent">
+			<div>
+				<h1>Despacho BC</h1>
+
+			</div>
+			<img src="https://picsum.photos/500/500" alt="" class="heroImage"/>
+		</div>
 	</section>
 	<section class="confianza">
 
@@ -24,4 +36,4 @@ import BaseLayout from "../layouts/indexLayout.astro";
 	<section class="contacto">
 
 	</section>
-</BaseLayout>
+</IndexLayout>

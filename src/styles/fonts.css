@@ -1,0 +1,24 @@
+
+@font-face {
+    font-family: AvantGradeGothic;
+    src: url('/fonts/Avant_Garde_Gothic_Std_Book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: AvantGradeGothic;
+    src: url('/fonts/Avant_Garde_Gothic_Std_Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: medium;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: AvantGradeGothic;
+    src: url('/fonts/Avant_Garde_Gothic_Std_Demi.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}

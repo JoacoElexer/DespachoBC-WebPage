@@ -6,6 +6,8 @@
     background-color: transparent;
     height: auto;
     width: 100%;
+    position: fixed;
+    z-index: 9999;
     border: 1px solid red;
 }
 
@@ -46,6 +48,8 @@
 
 .links a {
     text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
     color: #000000;
 }
 
@@ -64,6 +68,8 @@
 
 .navbarContactBtn a {
     text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
     color: #FFFFFF;
 }
 

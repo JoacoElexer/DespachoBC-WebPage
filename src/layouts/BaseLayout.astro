@@ -1,7 +1,8 @@
 ---
 // Este layout sirve para las páginas secundarias, debido a la diferencia de estilos
 // (Especialmente por las figuras del background)
-const { title = 'Despacho BC'} = Astro.props;
+const { title = "Despacho BC", favicon = "/favicon.svg" } = Astro.props;
+import "../styles/fonts.css";
 ---
 
 <!DOCTYPE html>
@@ -9,6 +10,7 @@ const { title = 'Despacho BC'} = Astro.props;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href={favicon} />
     <title>{title}</title>
 </head>
 <body>

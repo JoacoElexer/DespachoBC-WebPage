@@ -1,34 +1,20 @@
----
-
----
-<script src="../../js/animations/BarChart.js">
-    //import { gsap } from "gsap";
-
-    
-</script>
+<script src="../../js/animations/BarChart.js"></script>
 
 <style>
-  .chart {
-    display: flex;
-    gap: 1rem;
-    align-items: normal;
-    height: 200px;
-    padding: 1rem;
-  }
-
-  .bar {
-    width: 40px;
-    background: #34A9FA;
-    height: 0;
-    transition: height .4s ease;
-  }
-
+  @import "../../styles/index/components/BarChart.css";
 </style>
 
-<div class="chart">
-  <div class="bar" style="--h: 40%"></div>
-  <div class="bar" style="--h: 70%"></div>
-  <div class="bar" style="--h: 90%"></div>
-  <div class="bar" style="--h: 50%"></div>
+<div class="chart" >
+  <div class="bar" style="--h: 20%"></div>
+  <div class="bar" style="--h: 35%"></div>
+  <div class="bar" style="--h: 45%"></div>
   <div class="bar" style="--h: 65%"></div>
+  <div class="bar" style="--h: 85%"></div>
+  <div class="bar" style="--h: 90%"></div>
+
+  <div class="progressWrapper">
+    <span class="progressNumber">100%</span>
+    <div class="progressBar"></div>
+  </div>
+  
 </div>

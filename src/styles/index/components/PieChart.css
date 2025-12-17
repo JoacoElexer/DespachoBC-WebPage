@@ -1,0 +1,10 @@
+svg {
+        width: 40vh;
+        height: 40vh;
+    }
+
+    circle {
+        fill: none;
+        stroke-width: 480px;
+       
+    }

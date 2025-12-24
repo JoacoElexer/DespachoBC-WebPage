@@ -9,7 +9,6 @@
   overflow: visible;
   inset: 0;
   z-index: -1;
-  border: 1px solid rgb(178, 10, 200);
 }
 
 .shape {
@@ -23,7 +22,7 @@
 }
 
 .shape-1 {
-  left: -10%;
+  left: -20%;
 }
 
 .shape-2 {

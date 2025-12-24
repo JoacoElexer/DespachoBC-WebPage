@@ -1,0 +1,89 @@
+---
+// TODO: definir links
+const servicios = [
+    { name: "Contable", href: "#" },
+    { name: "Fiscal", href: "#" },
+    { name: "Capacitación", href: "#" },
+    { name: "Recursos Humanos", href: "#" },
+    { name: "Servicio Laboral", href: "#" },
+    { name: "Servicios para trabajadores", href: "#" },
+    { name: "Servicios para empresas", href: "#" },
+    { name: "Derecho Corporativo", href: "#" },
+];
+
+const nosotros = [
+    { name: "¿Quienes somos?", href: "#" },
+    { name: "Nuestros inicios", href: "#" },
+];
+
+const logo = "/logo/Logo_BC.png";
+const phoneIcon = "/icons/phone.png";
+const emailIcon = "/icons/envelope-simple.png";
+---
+
+<!-- TODO: Conseguir numeros de telefono -->
+<style>
+    @import url("../../styles/global/FooterStyles.css");
+</style>
+<div class="footerWrapper">
+    <div class="footerColumn" id="colInfo">
+        <img src={logo} alt="footerLogo" class="footerLogo" />
+        <p id="footer-info-text-L">
+            Ofrecemos atención personalizada, garantizando soluciones contables
+            precisas y un acompañamiento constante en cada paso.
+        </p>
+        <p>© Despacho BC</p>
+        <p>Desarrollado por XXXX</p>
+    </div>
+
+    <div class="midfooterColumn">
+        <div class="footerMidColumn" id="colServicios">
+            <h3>Servicios</h3>
+            <ul>
+                {
+                    servicios.map((item) => (
+                        <li>
+                            <a href={item.href}>{item.name}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <div class="footerMidColumn" id="colNosotros">
+            <h3>Nosotros</h3>
+            <ul>
+                {
+                    nosotros.map((item) => (
+                        <li>
+                            <a href={item.href}>{item.name}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="footerColumn" id="colContacto">
+        <a href="#"><h3>Contáctanos!</h3></a>
+        <!-- TODO: definir link de contacto -->
+        <div class="contactsContainer">
+            <img src={phoneIcon} alt="Tel" class="contactIcon">
+            <div class="phoneContacts">
+                <p>Teléfono: +52 123 456 7890</p>
+                <!-- TODO: definir telefono -->
+                <p>Teléfono: +52 123 456 7890</p>
+                <!-- TODO: definir telefono -->
+            </div>
+        </div>
+        <div class="contactsContainer">
+            <img src={emailIcon} alt="Email" class="contactIcon">
+            <div class="emailContacts">
+                <p>Email: contacto@despachobc.com</p>
+                <!-- TODO: definir email -->
+                <p>Email: contacto@despachobc.com</p>
+                <!-- TODO: definir email -->
+            </div>
+        </div>
+    </div>
+</div>

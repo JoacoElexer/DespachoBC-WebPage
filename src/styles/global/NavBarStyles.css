@@ -52,6 +52,7 @@
     color: #000000;
 }
 
+/* TODO: revisar tamaño de fuente (Se rompe con el cambio de tamaño de pantalla) */
 .navbarContactBtn {
     display: flex;
     justify-content: center;

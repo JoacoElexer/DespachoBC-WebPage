@@ -3,6 +3,8 @@ import IndexLayout from "../layouts/indexLayout.astro";
 import "../styles/index/components/hero.css";
 import BarChartComponent from "../components/index/BarChartComponent.astro";
 import PieChartComponent from"../components/index/PieChartComponent.astro"
+
+const heroImg = '/assets/hero_section_img.png'
 ---
 
 <IndexLayout title="Despacho BC">
@@ -17,7 +19,7 @@ import PieChartComponent from"../components/index/PieChartComponent.astro"
 				<h1>Despacho BC</h1>
 				<BarChartComponent />
 			</div>
-			<img src="https://picsum.photos/500/500" alt="" class="heroImage"/>
+			<img src={heroImg} alt="" class="heroImage"/>
 		</div>
 	</section>
 

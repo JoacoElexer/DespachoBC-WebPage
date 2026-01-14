@@ -1,0 +1,76 @@
+  .carouselWrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel {
+    overflow-x: scroll;
+    margin: clamp(1rem, 5vw, 3.5rem);
+    display: flex;
+    gap: 3em;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carouselImage {
+    flex: 0 0 20em;
+    height: 12em;
+    border-radius: 1rem;
+    aspect-ratio: 5/3;
+    align-content: center;
+    scroll-snap-align: start;
+  }
+
+  .btn {
+    padding: 0.5rem;
+    height: 3em;
+    display: flex;
+    flex: 0 0 3em;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border: 2px solid black;
+    border-radius: 100%;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 500ms;
+    overflow: hidden;
+  }
+
+  .btn:hover {
+    color: white;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    height: 110%;
+    width: 0%;
+    top: -2;
+    left: -1rem;
+    transform: skewX(45deg);
+    background-color: #a1c743;
+    z-index: -1;
+    transition: all 500ms;
+  }
+
+  .btn:hover::before {
+    width: 170%;
+  }
+
+  @media (max-width: 768px) { /* TODO: Cambiar el layout de los botones en movil */
+  .btn {
+    display: none;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+  .arrow {
+    width: 2em;
+    height: 2em;
+  }

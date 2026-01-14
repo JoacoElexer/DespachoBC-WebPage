@@ -1,0 +1,65 @@
+---
+const props = Astro.props;
+
+let casosDeExito = Array(15);
+
+for (let i = 0; i < casosDeExito.length; i++) {
+  casosDeExito[i] = `https://picsum.photos/id/${i + 17}/400/300`;
+}
+---
+
+<style>
+@import url('../../styles/index/components/CarouselStyles.css');
+</style>
+
+<!--TODO: Mover script a /js -->
+<script> 
+  const carousel = document.getElementById("carousel");
+  const cardWidth = 20 * 16 + 5 * 16; // 20em + gap
+
+  document.querySelector(".btn.right")!.addEventListener("click", () => {
+    carousel!.scrollBy({
+      left: cardWidth,
+      behavior: "smooth",
+    });
+  });
+
+  document.querySelector(".btn.left")!.addEventListener("click", () => {
+    carousel!.scrollBy({
+      left: -cardWidth,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<div class="carouselWrapper">
+  <div class="btn left" aria-label="Anterior">
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      class="arrow"
+      viewBox="0 0 12 12"
+      ><title>arrow-left-12-regular</title><path
+        fill="currentColor"
+        d="M10.5 6a.5.5 0 0 0-.5-.5H3.207l2.647-2.646a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L3.207 6.5H10a.5.5 0 0 0 .5-.5"
+      ></path></svg
+    >
+  </div>
+
+  <div class="carousel" id="carousel">
+    {casosDeExito.map((image) => <img src={image} class="carouselImage" />)}
+  </div>
+
+  <div class="btn right" aria-label="Siguiente">
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      class="arrow"
+      viewBox="0 0 12 12"
+      ><title>arrow-right-12-regular</title><path
+        fill="currentColor"
+        d="M1.5 6a.5.5 0 0 1 .5-.5h6.793L6.146 2.854a.5.5 0 1 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L8.793 6.5H2a.5.5 0 0 1-.5-.5"
+      ></path></svg
+    >
+  </div>
+</div>

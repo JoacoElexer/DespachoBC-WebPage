@@ -1,0 +1,75 @@
+---
+// TODO: Estilo alternativo de carrusel
+let casosDeExito = Array(8)
+
+for (let i = 0; i < casosDeExito.length; i++) {
+  casosDeExito[i] = `https://picsum.photos/id/${i+17}/400/200`
+  
+}
+---
+
+<style>
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .carouselWrapper {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .carouselWrapper:before,
+  .carouselWrapper:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+
+  .carouselWrapper:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+
+  .carouselWrapper:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+
+  .carousel {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  }
+
+  .carouselImage {
+    height: 150px;
+    margin-inline: 1rem;
+    border-radius: 12px;
+
+  }
+</style>
+
+<div class="carouselWrapper">
+  <div class="carousel">
+    {casosDeExito.map(image => (
+      <img src={image} class="carouselImage"/>
+    ))}
+  </div>
+
+  <div class="carousel">
+    {casosDeExito.map(image => (
+      <img src={image} class="carouselImage"/>
+    ))}
+  </div>
+</div>

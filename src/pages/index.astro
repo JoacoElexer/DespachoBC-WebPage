@@ -1,8 +1,10 @@
 ---
 import IndexLayout from "../layouts/indexLayout.astro";
 import "../styles/index/components/hero.css";
+import "../styles/index/components/casosExito.css"
 import BarChartComponent from "../components/index/BarChartComponent.astro";
 import PieChartComponent from"../components/index/PieChartComponent.astro"
+import CarouselComponent from "../components/index/CarouselComponent.astro";
 
 const heroImg = '/assets/hero_section_img.png'
 ---
@@ -36,7 +38,7 @@ const heroImg = '/assets/hero_section_img.png'
 
 	</section>
 	<section class="casos-de-exito">
-
+		<CarouselComponent/>
 	</section>
 	<section class="contacto">
 

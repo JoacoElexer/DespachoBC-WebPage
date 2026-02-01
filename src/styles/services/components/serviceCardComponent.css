@@ -1,21 +1,26 @@
-.card-icon {
-    padding: 1rem;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: transparent;
-    min-width: 100%;
-    width: 120%;
+.services-card-component {
+    padding: 2rem;
+    background: #F8F8F8;
+    border-radius: 14px;
+    box-shadow: 0 4px 5px rgb(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+    border: 3px solid transparent;
 }
 
-.cardContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.services-card-component:hover {
+    transform: translateY(-5px);
+    border-color: #9AC433;
+}
+
+.service-card-icon {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card-title {
+    font-size: 1rem;
+    font-weight: bold;
     text-align: center;
-    border: 3px solid black;
-    width: 10rem;
-    height: auto;
-    padding: 1rem;
-    gap: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333333;
 }

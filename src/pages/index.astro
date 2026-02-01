@@ -1,14 +1,16 @@
 ---
 import IndexLayout from "../layouts/indexLayout.astro";
-import "../styles/index/components/hero.css";
-import "../styles/index/components/confianza.css";
+import "../styles/index/pages/index.css";
+import "../styles/index/sections/hero.css";
+import "../styles/index/sections/confianza.css";
+import "../styles/index/sections/services.css";
 import BarChartComponent from "../components/index/BarChartComponent.astro";
-import PieChartComponent from"../components/index/PieChartComponent.astro"
-import CardComponent from "../components/services/ServiceCardComponent.astro"
+import PieChartComponent from"../components/index/PieChartComponent.astro";
+import CardComponent from "../components/services/ServiceCardComponent.astro";
+import ServiceGridComponent from "../components/services/ServiceGridComponent.astro";
 
 const heroImg = '/assets/hero_section_img.png'
 ---
-
 
 <IndexLayout title="Despacho BC">
 	<section class="hero">
@@ -69,11 +71,24 @@ const heroImg = '/assets/hero_section_img.png'
 	</section>
 
 	<section class="servicios">
-		<CardComponent />
+		<div class="services-wrapper">
+			<div class="services-title-and-description">
+				<h2 class="services-title">Servicios Destacados</h2>
+				<p class="services-description">En bc, trabajamos con ética y entrega brindando soluciones eficientes, asertivas y confiables que contribuyen al <span class="services-description-span">crecimiento y éxito de las empresas de nuestros clientes.</span></p>
+			</div>
+			<ServiceGridComponent />
+		</div>
 	</section>
 
 	<section class="sobre-nosotros">
+		<div class="aboutus-wrapper">
+			<div class="aboutus-content-left">
 
+			</div>
+			<div class="aboutus-content-right">
+
+			</div>
+		</div>
 	</section>
 
 	<section class="nuestro-compromiso">

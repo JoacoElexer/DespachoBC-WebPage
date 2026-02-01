@@ -1,20 +1,13 @@
 ---
-    const cardIcons = [
-        '/icons/', // ! Replace with actual icon paths
-        '/icons/',
-        '/icons/',
-        '/icons/',
-        '/icons/',
-        '/icons/',
-        '/icons/',
-        '/icons/',
-    ]
+const {title, icon} = Astro.props;
 ---
 
 <style>
-    @import url('../../styles/services/components/serviceCardComponent.css');
+    @import url("../../styles/services/components/serviceCardComponent.css");
 </style>
-<div class="cardContainer">
-    <img src="" alt="" class="card-icon">
-    <h3>Título del Servicio</h3>
+<div class="services-card-component">
+    <div class="service-card-icon">
+        { icon }
+    </div>
+    <h3 class="service-card-title">{ title }</h3>
 </div>

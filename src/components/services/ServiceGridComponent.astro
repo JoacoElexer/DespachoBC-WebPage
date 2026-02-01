@@ -1,0 +1,60 @@
+---
+import Card from "./ServiceCardComponent.astro";
+const cardIcons = [
+    "/icons/", // ! Replace with actual icon paths
+    "/icons/",
+    "/icons/",
+    "/icons/",
+    "/icons/",
+    "/icons/",
+    "/icons/",
+    "/icons/",
+];
+
+const services = [
+    {
+        title: "Servicio Contable",
+        icon: cardIcons[0]
+    },
+    {
+        title: "Servicio Fiscal",
+        icon: cardIcons[1]
+    },
+    {
+        title: "Capacitación",
+        icon: cardIcons[2]
+    },
+    {
+        title: "Recursos Humanos",
+        icon: cardIcons[3]
+    },
+    {
+        title: "Servicios para Trabajadores",
+        icon: cardIcons[4]
+    },
+    {
+        title: "Servicios para Empresas",
+        icon: cardIcons[5]
+    },
+    {
+        title: "Derecho Laboral",
+        icon: cardIcons[6]
+    },
+    {
+        title: "Derecho Corporativo",
+        icon: cardIcons[7]
+    },
+]
+---
+
+<style>
+    @import url("../../styles/services/components/serviceGridComponent.css");
+</style>
+<div class="services-card-grid">
+    {services.map((item) => (
+        <Card
+            title={item.title}
+            icon={item.icon}
+        />
+    ))}
+</div>

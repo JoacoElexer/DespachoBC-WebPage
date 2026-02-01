@@ -1,0 +1,30 @@
+.services-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: clamp(4rem, 5vw, 8rem);
+}
+
+.services-title-and-description {
+    text-align: center;
+    width: 60%;
+    margin-bottom: 2rem;
+}
+
+.services-title{
+    font-size: 1.8rem;
+
+}
+
+.services-description {
+    color: #383838;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.services-description-span {
+    color: #A1C743;
+}

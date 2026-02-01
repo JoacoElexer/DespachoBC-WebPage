@@ -4,12 +4,15 @@ import "../styles/index/pages/index.css";
 import "../styles/index/sections/hero.css";
 import "../styles/index/sections/confianza.css";
 import "../styles/index/sections/services.css";
+import "../styles/index/sections/aboutUs.css";
 import BarChartComponent from "../components/index/BarChartComponent.astro";
 import PieChartComponent from"../components/index/PieChartComponent.astro";
 import CardComponent from "../components/services/ServiceCardComponent.astro";
 import ServiceGridComponent from "../components/services/ServiceGridComponent.astro";
+import BlueButton from "../components/global/BlueButtonComponent.astro";
 
 const heroImg = '/assets/hero_section_img.png'
+const wip = '/assets/WorkInProgress.jpg'
 ---
 
 <IndexLayout title="Despacho BC">
@@ -83,10 +86,12 @@ const heroImg = '/assets/hero_section_img.png'
 	<section class="sobre-nosotros">
 		<div class="aboutus-wrapper">
 			<div class="aboutus-content-left">
-
+				<img src={wip} alt="" class="aboutus-image"/>
 			</div>
 			<div class="aboutus-content-right">
-
+				<h2 class="aboutus-title">Sobre Nosotros</h2>
+				<p class="aboutus-description">Lorem ipsum dolor sit amet consectetur. Netus sit enim fames pellentesque. Rhoncus magna quis mattis platea id non suspendisse. Eget morbi eu aliquam nec velit. Maecenas sit enim aenean augue a mauris sed netus. Sed ullamcorper sagittis hendrerit velit in. Ornare at ultrices sed amet nibh tellus scelerisque ac. Tincidunt tortor ultricies.</p>
+				<BlueButton text="Conoce Más" onClick="console.log('Conoce Más clicked')" />
 			</div>
 		</div>
 	</section>

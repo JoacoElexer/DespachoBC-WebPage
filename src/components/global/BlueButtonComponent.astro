@@ -1,0 +1,8 @@
+---
+const { text, onClick } = Astro.props;
+---
+
+<style>
+    @import url("../../styles/global/blueButtonComponent.css");
+</style>
+<button class="blueButton" onclick={onClick}>{text}</button>

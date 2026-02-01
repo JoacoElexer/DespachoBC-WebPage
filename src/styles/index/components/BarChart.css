@@ -3,14 +3,15 @@
   gap: 1rem;
   justify-content: center;
   align-items: flex-end;
-  height: 300px;
+  height: 15rem;
   padding: 1rem;
 }
 
 .bar {
-  width: 30px;
+  width: 1.1rem;
   background: #34A9FA;
   height: 0%;
+  border-radius: 16px;
 }
 
 .progressWrapper {
@@ -18,17 +19,18 @@
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  height: 100%;
+  height: 103%;
   width: 10%;
 }
 
 .progressBar {
-  width: 15px;
+  width: 70%;
   background-color: black;
   height: 0%;
   border-radius: 16px;
 }
 
 .progressNumber {
+  font-size: 1rem;
   font-weight: 600;
 }

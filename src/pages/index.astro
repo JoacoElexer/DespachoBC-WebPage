@@ -1,13 +1,13 @@
 ---
 import IndexLayout from "../layouts/indexLayout.astro";
 import "../styles/index/components/hero.css";
-import "../styles/index/casosExito.css"
 import BarChartComponent from "../components/index/BarChartComponent.astro";
 import PieChartComponent from"../components/index/PieChartComponent.astro"
-import CarouselComponent from "../components/index/CarouselComponent.astro";
+import CardComponent from "../components/services/ServiceCardComponent.astro"
 
 const heroImg = '/assets/hero_section_img.png'
 ---
+
 
 <IndexLayout title="Despacho BC">
 	<section class="hero">
@@ -17,11 +17,25 @@ const heroImg = '/assets/hero_section_img.png'
 		</div>
 
 		<div class="heroContent">
-			<div>
-				<h1>Despacho BC</h1>
-				<BarChartComponent />
+			<div class="hero-content-left">
+				<div class="hero-title">
+					<h1 class="hero-title-black">Despacho</h1><h1 class="hero-title-green">BC</h1>
+				</div>
+				<p class="description">Somos un despacho con más de 25 años de experiencia.
+					Estamos comprometidos con la excelencia, nuestro equipo de contadores 
+					certificados cuentan con capacitación constante y actualizada.
+				</p>
+				<h3 class="impact-phrase">Frase de impacto</h3>
+				<div class="attention-content">
+					<div class="attention-text">
+						<p>Ofrecemos atención personalizada, garantizando soluciones contables precisas y un acompañamiento constante en cada paso.</p>
+					</div>
+					<BarChartComponent />
+				</div>
 			</div>
-			<img src={heroImg} alt="" class="heroImage"/>
+			<div class="hero-content-right">
+				<img src={heroImg} alt="" class="heroImage"/>
+			</div>
 		</div>
 	</section>
 
@@ -29,7 +43,7 @@ const heroImg = '/assets/hero_section_img.png'
 		<PieChartComponent />
 	</section>
 	<section class="servicios">
-
+		<CardComponent />
 	</section>
 	<section class="sobre-nosotros">
 
@@ -38,7 +52,7 @@ const heroImg = '/assets/hero_section_img.png'
 
 	</section>
 	<section class="casos-de-exito">
-		<CarouselComponent/>
+
 	</section>
 	<section class="contacto">
 

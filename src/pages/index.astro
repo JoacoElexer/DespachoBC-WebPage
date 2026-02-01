@@ -1,6 +1,7 @@
 ---
 import IndexLayout from "../layouts/indexLayout.astro";
 import "../styles/index/components/hero.css";
+import "../styles/index/components/confianza.css";
 import BarChartComponent from "../components/index/BarChartComponent.astro";
 import PieChartComponent from"../components/index/PieChartComponent.astro"
 import CardComponent from "../components/services/ServiceCardComponent.astro"
@@ -40,20 +41,49 @@ const heroImg = '/assets/hero_section_img.png'
 	</section>
 
 	<section class="confianza">
-		<PieChartComponent />
+		<div class="trust-section-wrapper">
+			<div class="trust-section-content-left">
+				<div class="trust-titles">
+					<h3 class="trust-title-1">Cuando Tus Números Están En Orden</h3>
+					<h3 class="trust-title-2">Tu Empresa Opera Sin Fricciones</h3>
+				</div>
+				<div class="trust-description">
+					<p class="trust-description-1">
+						Garantizamos que tu empresa cumpla con todas sus obligaciones fiscales sin complicaciones.
+					</p>
+					<p class="trust-description-2">
+						Nuestro proceso está diseñado para recuperar el control contable y mantenerlo a largo plazo:
+					</p>
+				</div>
+				<ul class="trust-unordered-list">
+					<li>Revisamos Y Corregimos La Contabilidad Existente</li>
+					<li>Regularizamos tu Situación Ante El SAT</li>
+					<li>Establecemos Controles Contables Claros y Sostenibles</li>
+					<li>Te Acompañamos Continuamente Para Mantener Todo En Orden</li>
+				</ul>
+			</div>
+			<div class="trust-section-content-right">
+				<PieChartComponent />
+			</div>
+		</div>
 	</section>
+
 	<section class="servicios">
 		<CardComponent />
 	</section>
+
 	<section class="sobre-nosotros">
 
 	</section>
+
 	<section class="nuestro-compromiso">
 
 	</section>
+
 	<section class="casos-de-exito">
 
 	</section>
+
 	<section class="contacto">
 
 	</section>

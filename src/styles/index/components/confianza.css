@@ -1,0 +1,51 @@
+.trust-section-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: clamp(4rem, 5vw, 8rem);
+}
+
+.trust-section-content-left {
+    width: 50%;
+}
+
+.trust-titles {
+    padding-bottom: 1.9rem;
+}
+
+.trust-title-1 {
+    font-size: 1.8rem;
+}
+
+.trust-title-2 {
+    color: #1D83E2;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.trust-description-1 {
+    font-size: 1.15rem;
+}
+
+.trust-description-2 {
+    font-size: 1.15rem;
+    padding-block: 1.7rem;
+}
+
+.trust-section-content-right {
+    width: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.trust-unordered-list {
+    font-size: 1rem;
+}
+
+.trust-unordered-list li {
+    margin-block: 0.2rem;
+}

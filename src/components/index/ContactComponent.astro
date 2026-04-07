@@ -1,0 +1,41 @@
+---
+import BlueButtonComponent from "../global/BlueButtonComponent.astro";
+const wip = '/assets/WorkInProgress.jpg';
+const telIcon = 'assets/icons/phone.png';
+const locationIcon = 'assets/icons/map-pin.png';
+const emailIcon = 'assets/icons/envelope-simple.png';
+---
+
+<style>
+    @import url("../../styles/index/sections/ContactComponent.css");
+</style>
+<div class="contact-wrapper">
+    <div class="contact-options-wrapper">
+        <div class="contact-option">
+            <div class="contact-img">
+                <img src={telIcon} alt="" class="contact-icon" />
+            </div>
+            <h3>Teléfonos</h3>
+            <p>+52 (477) 658 9123 - Whatsapp</p>
+            <p>+52 (477) 1234567 - Llamadas</p>
+        </div>
+        <div class="contact-option">
+            <div class="contact-img">
+                <img src={locationIcon} alt="" class="contact-icon" />
+            </div>
+            <h3>Ubicación</h3>
+            <p>C. Rosendo Gutiérrez de Velazco 216, La Alameda, 37204 
+                León de los Aldama, Gto., México</p>
+        </div>
+        <div class="contact-option">
+            <div class="contact-img">
+                <img src={emailIcon} alt="" class="contact-icon" />
+            </div>
+            <h3>Correo</h3>
+            <p>contabilidad@despachobc.com</p>
+            <p>gerencia@despachobc.com</p>
+        </div>
+    </div>
+    <BlueButtonComponent text="Contáctanos" 
+    onClick="console.log('Contactanos clicked')" />
+</div>

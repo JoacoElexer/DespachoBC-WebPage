@@ -5,18 +5,21 @@ import "../styles/index/sections/hero.css";
 import "../styles/index/sections/confianza.css";
 import "../styles/index/sections/services.css";
 import "../styles/index/sections/aboutUs.css";
+import "../styles/index/sections/ourCompromise.css";
 import BarChartComponent from "../components/index/BarChartComponent.astro";
 import PieChartComponent from"../components/index/PieChartComponent.astro";
-import CardComponent from "../components/services/ServiceCardComponent.astro";
 import ServiceGridComponent from "../components/services/ServiceGridComponent.astro";
 import BlueButton from "../components/global/BlueButtonComponent.astro";
+import CompromiseCardGridComponent from "../components/index/CompromiseCardGridComponent.astro";
+import CasosExitoCarousel from "../components/index/CasosExitoCarouselComponent.astro";
+import ContactComponent from "../components/index/ContactComponent.astro";
 
 const heroImg = '/assets/hero_section_img.png'
 const wip = '/assets/WorkInProgress.jpg'
 ---
 
 <IndexLayout title="Despacho BC">
-	<section class="hero">
+	<section class="hero" id="hero">
 		<div class="shapeWrapper">
 			<div class="shape shape-1"></div>
 			<div class="shape shape-2"></div>
@@ -45,7 +48,7 @@ const wip = '/assets/WorkInProgress.jpg'
 		</div>
 	</section>
 
-	<section class="confianza">
+	<section class="confianza" id="confianza">
 		<div class="trust-section-wrapper">
 			<div class="trust-section-content-left">
 				<div class="trust-titles">
@@ -73,7 +76,7 @@ const wip = '/assets/WorkInProgress.jpg'
 		</div>
 	</section>
 
-	<section class="servicios">
+	<section class="servicios" id="services">
 		<div class="services-wrapper">
 			<div class="services-title-and-description">
 				<h2 class="services-title">Servicios Destacados</h2>
@@ -83,7 +86,7 @@ const wip = '/assets/WorkInProgress.jpg'
 		</div>
 	</section>
 
-	<section class="sobre-nosotros">
+	<section class="sobre-nosotros" id="about-us">
 		<div class="aboutus-wrapper">
 			<div class="aboutus-content-left">
 				<img src={wip} alt="" class="aboutus-image"/>
@@ -96,15 +99,19 @@ const wip = '/assets/WorkInProgress.jpg'
 		</div>
 	</section>
 
-	<section class="nuestro-compromiso">
-
+	<section class="nuestro-compromiso" id="our-compromise">
+		<div class="ncWrapper">
+			<h3 class="ncTitle">Nuestro Compromiso <span class="ncTitleSpan">Con Tu Empresa</span></h3>
+			<CompromiseCardGridComponent />
+		</div>
 	</section>
 
-	<section class="casos-de-exito">
-
+	<section class="casos-de-exito" id="casos-exito">
+		<h3 class="ceTitle">Casos de <span class="ceTitleSpan">Éxito</span></h3>
+		<CasosExitoCarousel />
 	</section>
 
-	<section class="contacto">
-
+	<section class="contacto" id="contacto">
+		<ContactComponent />
 	</section>
 </IndexLayout>

@@ -1,0 +1,21 @@
+.exito-component-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-inline: 5%;
+    gap: 50px;
+}
+
+.exito-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    background: #F8F8F8;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exito-card-img {
+    width: 100%;
+    height: auto;
+}

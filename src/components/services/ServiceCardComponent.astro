@@ -1,13 +1,15 @@
 ---
-const {title, icon} = Astro.props;
+const {title, icon, category} = Astro.props;
 ---
 
 <style>
     @import url("../../styles/services/components/serviceCardComponent.css");
 </style>
-<div class="services-card-component">
-    <div class="service-card-icon">
-        <img src={ icon } alt="">
+<a href={category} style="text-decoration: none;">
+    <div class="services-card-component">
+        <div class="service-card-icon">
+            <img src={ icon } alt="">
+        </div>
+        <h3 class="service-card-title">{ title }</h3>
     </div>
-    <h3 class="service-card-title">{ title }</h3>
-</div>
+</a>

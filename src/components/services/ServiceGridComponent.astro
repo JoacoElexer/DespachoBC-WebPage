@@ -1,7 +1,7 @@
 ---
 import Card from "./ServiceCardComponent.astro";
 const cardIcons = [
-    '/assets/WorkInProgress.jpg', // ! Replace with actual icon paths
+    '/assets/WorkInProgress.jpg',
     '/assets/WorkInProgress.jpg',
     '/assets/WorkInProgress.jpg',
     '/assets/WorkInProgress.jpg',
@@ -14,35 +14,43 @@ const cardIcons = [
 const services = [
     {
         title: "Servicio Contable",
-        icon: cardIcons[0]
+        icon: cardIcons[0],
+        category: "servicio-contable"
     },
     {
         title: "Servicio Fiscal",
-        icon: cardIcons[1]
+        icon: cardIcons[1],
+        category: "servicio-fiscal"
     },
     {
         title: "Capacitación",
-        icon: cardIcons[2]
+        icon: cardIcons[2],
+        category: "capacitacion"
     },
     {
         title: "Recursos Humanos",
-        icon: cardIcons[3]
+        icon: cardIcons[3],
+        category: "recursos-humanos"
     },
     {
         title: "Servicios para Trabajadores",
-        icon: cardIcons[4]
+        icon: cardIcons[4],
+        category: "servicios-para-trabajadores"
     },
     {
         title: "Servicios para Empresas",
-        icon: cardIcons[5]
+        icon: cardIcons[5],
+        category: "servicios-para-empresas"
     },
     {
         title: "Derecho Laboral",
-        icon: cardIcons[6]
+        icon: cardIcons[6],
+        category: "derecho-laboral"
     },
     {
         title: "Derecho Corporativo",
-        icon: cardIcons[7]
+        icon: cardIcons[7],
+        category: "derecho-corporativo"
     },
 ]
 ---
@@ -55,6 +63,7 @@ const services = [
         <Card
             title={item.title}
             icon={item.icon}
+            category={item.category}
         />
     ))}
 </div>

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const wip = "/assets/WorkInProgress.jpg";
+
+export async function getStaticPaths() {
+    return [
+        { params: {category: 'servicio-contable' }, props: {title: 'Servicio Contable' } },
+        { params: {category: 'servicio-fiscal' }, props: {title: 'Servicio Fiscal' } },
+        { params: {category: 'capacitacion' }, props: {title: 'Capacitación' } },
+        { params: {category: 'recursos-humanos' }, props: {title: 'Recursos Humanos' } },
+        { params: {category: 'servicios-para-trabajadores' }, props: {title: 'Servicios para Trabajadores' } },
+        { params: {category: 'servicios-para-empresas' }, props: {title: 'Servicios para Empresas' } },
+        { params: {category: 'derecho-laboral' }, props: {title: 'Derecho Laboral' } },
+        { params: {category: 'derecho-corporativo' }, props: {title: 'Derecho Corporativo' } },
+    ]
+}
+
+const {category} = Astro.params;
+const {title} = Astro.props;
+---
+
+<BaseLayout title={title}>
+    <section class="pageTitles">
+
+    </section>
+    <section class="services">
+
+    </section>
+    <section class="recommendedServices">
+
+    </section>
+</BaseLayout>

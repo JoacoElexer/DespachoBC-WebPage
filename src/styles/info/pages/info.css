@@ -16,11 +16,11 @@
 }
 
 .shape-1 {
-    left: -215%;
+    left: -195%;
 }
 
 .shape-2 {
-    left: 235%;
+    left: 227%;
 }
 
 .info-section {
@@ -60,7 +60,6 @@
     position: relative;
     z-index: 1;
     padding-inline: 4%;
-    padding-block: 2.5%;
 }
 
 .info-aboutus-img-content {

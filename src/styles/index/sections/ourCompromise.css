@@ -1,0 +1,12 @@
+.ncTitle {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.ncTitleSpan {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+    color: #A1C743;
+}

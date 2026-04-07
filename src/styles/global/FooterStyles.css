@@ -43,6 +43,9 @@
 .footerLogo {
     width: 14cap;
     height: auto;
+    border-radius: 10px;
+    background-color: white;
+    padding: 2%;
 }
 
 #footer-info-text-L {

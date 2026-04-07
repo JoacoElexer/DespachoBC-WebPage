@@ -4,7 +4,9 @@
     align-items: center;
     justify-content: center;
     gap: 3rem;
-    padding: 2rem;
+    padding-inline: 3%;
+    padding-top: 3%;
+    padding-bottom: 8%;
 }
 
 .contact-options-wrapper {

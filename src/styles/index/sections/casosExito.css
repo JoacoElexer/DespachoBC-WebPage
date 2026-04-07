@@ -1,0 +1,23 @@
+.casos-de-exito-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 3%;
+    padding-top: 3%;
+    padding-bottom: 7%;
+}
+
+.ceTitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ceTitleSpan {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+    color: #1D83E2;
+}

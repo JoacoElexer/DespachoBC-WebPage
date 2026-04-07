@@ -6,16 +6,17 @@ import "../styles/index/sections/confianza.css";
 import "../styles/index/sections/services.css";
 import "../styles/index/sections/aboutUs.css";
 import "../styles/index/sections/ourCompromise.css";
+import "../styles/index/sections/casosExito.css";
 import BarChartComponent from "../components/index/BarChartComponent.astro";
-import PieChartComponent from"../components/index/PieChartComponent.astro";
+import PieChartComponent from "../components/index/PieChartComponent.astro";
 import ServiceGridComponent from "../components/services/ServiceGridComponent.astro";
 import BlueButton from "../components/global/BlueButtonComponent.astro";
 import CompromiseCardGridComponent from "../components/index/CompromiseCardGridComponent.astro";
 import CasosExitoCarousel from "../components/index/CasosExitoCarouselComponent.astro";
 import ContactComponent from "../components/index/ContactComponent.astro";
 
-const heroImg = '/assets/hero_section_img.png'
-const wip = '/assets/WorkInProgress.jpg'
+const heroImg = "/assets/hero_section_img.png";
+const wip = "/assets/WorkInProgress.jpg";
 ---
 
 <IndexLayout title="Despacho BC">
@@ -28,22 +29,32 @@ const wip = '/assets/WorkInProgress.jpg'
 		<div class="heroContent">
 			<div class="hero-content-left">
 				<div class="hero-title">
-					<h1 class="hero-title-black">Despacho</h1><h1 class="hero-title-green">BC</h1>
+					<h1 class="hero-title-black">Despacho</h1><h1
+						class="hero-title-green"
+					>
+						BC
+					</h1>
 				</div>
-				<p class="description">Somos un despacho con más de 25 años de experiencia.
-					Estamos comprometidos con la excelencia, nuestro equipo de contadores 
-					certificados cuentan con capacitación constante y actualizada.
+				<p class="description">
+					Somos un despacho con más de 25 años de experiencia. Estamos
+					comprometidos con la excelencia, nuestro equipo de
+					contadores certificados cuentan con capacitación constante y
+					actualizada.
 				</p>
 				<h3 class="impact-phrase">Frase de impacto</h3>
 				<div class="attention-content">
 					<div class="attention-text">
-						<p>Ofrecemos atención personalizada, garantizando soluciones contables precisas y un acompañamiento constante en cada paso.</p>
+						<p>
+							Ofrecemos atención personalizada, garantizando
+							soluciones contables precisas y un acompañamiento
+							constante en cada paso.
+						</p>
 					</div>
 					<BarChartComponent />
 				</div>
 			</div>
 			<div class="hero-content-right">
-				<img src={heroImg} alt="" class="heroImage"/>
+				<img src={heroImg} alt="" class="heroImage" />
 			</div>
 		</div>
 	</section>
@@ -52,22 +63,32 @@ const wip = '/assets/WorkInProgress.jpg'
 		<div class="trust-section-wrapper">
 			<div class="trust-section-content-left">
 				<div class="trust-titles">
-					<h3 class="trust-title-1">Cuando Tus Números Están En Orden</h3>
-					<h3 class="trust-title-2">Tu Empresa Opera Sin Fricciones</h3>
+					<h3 class="trust-title-1">
+						Cuando Tus Números Están En Orden
+					</h3>
+					<h3 class="trust-title-2">
+						Tu Empresa Opera Sin Fricciones
+					</h3>
 				</div>
 				<div class="trust-description">
 					<p class="trust-description-1">
-						Garantizamos que tu empresa cumpla con todas sus obligaciones fiscales sin complicaciones.
+						Garantizamos que tu empresa cumpla con todas sus
+						obligaciones fiscales sin complicaciones.
 					</p>
 					<p class="trust-description-2">
-						Nuestro proceso está diseñado para recuperar el control contable y mantenerlo a largo plazo:
+						Nuestro proceso está diseñado para recuperar el control
+						contable y mantenerlo a largo plazo:
 					</p>
 				</div>
 				<ul class="trust-unordered-list">
 					<li>Revisamos Y Corregimos La Contabilidad Existente</li>
 					<li>Regularizamos tu Situación Ante El SAT</li>
-					<li>Establecemos Controles Contables Claros y Sostenibles</li>
-					<li>Te Acompañamos Continuamente Para Mantener Todo En Orden</li>
+					<li>
+						Establecemos Controles Contables Claros y Sostenibles
+					</li>
+					<li>
+						Te Acompañamos Continuamente Para Mantener Todo En Orden
+					</li>
 				</ul>
 			</div>
 			<div class="trust-section-content-right">
@@ -80,7 +101,13 @@ const wip = '/assets/WorkInProgress.jpg'
 		<div class="services-wrapper">
 			<div class="services-title-and-description">
 				<h2 class="services-title">Servicios Destacados</h2>
-				<p class="services-description">En bc, trabajamos con ética y entrega brindando soluciones eficientes, asertivas y confiables que contribuyen al <span class="services-description-span">crecimiento y éxito de las empresas de nuestros clientes.</span></p>
+				<p class="services-description">
+					En bc, trabajamos con ética y entrega brindando soluciones
+					eficientes, asertivas y confiables que contribuyen al <span
+						class="services-description-span"
+						>crecimiento y éxito de las empresas de nuestros
+						clientes.</span>
+				</p>
 			</div>
 			<ServiceGridComponent />
 		</div>
@@ -89,26 +116,43 @@ const wip = '/assets/WorkInProgress.jpg'
 	<section class="sobre-nosotros" id="about-us">
 		<div class="aboutus-wrapper">
 			<div class="aboutus-content-left">
-				<img src={wip} alt="" class="aboutus-image"/>
+				<img src={wip} alt="" class="aboutus-image" />
 			</div>
 			<div class="aboutus-content-right">
 				<h2 class="aboutus-title">Sobre Nosotros</h2>
-				<p class="aboutus-description">Lorem ipsum dolor sit amet consectetur. Netus sit enim fames pellentesque. Rhoncus magna quis mattis platea id non suspendisse. Eget morbi eu aliquam nec velit. Maecenas sit enim aenean augue a mauris sed netus. Sed ullamcorper sagittis hendrerit velit in. Ornare at ultrices sed amet nibh tellus scelerisque ac. Tincidunt tortor ultricies.</p>
-				<BlueButton text="Conoce Más" onClick="console.log('Conoce Más clicked')" />
+				<p class="aboutus-description">
+					Lorem ipsum dolor sit amet consectetur. Netus sit enim fames
+					pellentesque. Rhoncus magna quis mattis platea id non
+					suspendisse. Eget morbi eu aliquam nec velit. Maecenas sit
+					enim aenean augue a mauris sed netus. Sed ullamcorper
+					sagittis hendrerit velit in. Ornare at ultrices sed amet
+					nibh tellus scelerisque ac. Tincidunt tortor ultricies.
+				</p>
+				<BlueButton
+					text="Conoce Más"
+					onClick="console.log('Conoce Más clicked')"
+				/>
 			</div>
 		</div>
 	</section>
 
 	<section class="nuestro-compromiso" id="our-compromise">
 		<div class="ncWrapper">
-			<h3 class="ncTitle">Nuestro Compromiso <span class="ncTitleSpan">Con Tu Empresa</span></h3>
+			<h3 class="ncTitle">
+				Nuestro Compromiso <span class="ncTitleSpan"
+					>Con Tu Empresa</span>
+			</h3>
 			<CompromiseCardGridComponent />
 		</div>
 	</section>
 
 	<section class="casos-de-exito" id="casos-exito">
-		<h3 class="ceTitle">Casos de <span class="ceTitleSpan">Éxito</span></h3>
-		<CasosExitoCarousel />
+		<div class="casos-de-exito-wrapper">
+			<h3 class="ceTitle">
+				Casos de <span class="ceTitleSpan">Éxito</span>
+			</h3>
+			<CasosExitoCarousel />
+		</div>
 	</section>
 
 	<section class="contacto" id="contacto">

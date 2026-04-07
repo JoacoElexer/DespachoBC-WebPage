@@ -3,26 +3,24 @@
 // (Especialmente por las figuras del background)
 const { title = "Despacho BC", favicon = "/favicon.svg" } = Astro.props;
 import "../styles/global/fonts.css";
+import "../styles/global/global.css";
+import NavBarComponent from "../components/global/NavBarComponent.astro";
+import FooterComponent from "../components/global/FooterComponent.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href={favicon} />
-    <title>{title}</title>
-</head>
-<body>
-    <nav>
-        
-    </nav>
-    <main>
-        <p>Hola, este es el layout</p>
-        <slot />
-    </main>
-    <footer>
-
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href={favicon} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <NavBarComponent />
+        <main>
+            <slot />
+        </main>
+        <FooterComponent />
+    </body>
 </html>

@@ -1,3 +1,75 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const wip = "/assets/WorkInProgress.jpg";
 ---
+
+<style>
+    @import url("../styles/info/pages/info.css");
+</style>
+<BaseLayout title="Información">
+    <section class="info-section">
+        <div class="shapeWrapper">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+
+        <div class="infoContent">
+            <h2 class="info-title-main">Nosotros</h2>
+            <h1 class="info-company-name">Despacho <span>BC</span></h1>
+
+            <div class="info-aboutus-wrapper">
+                <div class="info-aboutus-img-content">
+                    <img
+                        src={wip}
+                        alt="Sobre nosotros"
+                        class="info-aboutus-image"
+                    />
+                </div>
+                <div class="info-aboutus-text-content">
+                    <h2 class="info-aboutus-title">
+                        ¿Quiénes <span>Somos?</span>
+                    </h2>
+                    <p class="info-aboutus-description">
+                        Somos un despacho con más de 25 años de experiencia, nos
+                        distingue el trato personalizado y exclusivo a nuestros
+                        clientes.
+                    </p>
+                    <p>
+                        Sem elit aenean convallis integer duis. Et pretium
+                        viverra eu ultrices adipiscing arcu sit mauris.
+                        Adipiscing amet amet libero nulla mi quam viverra.
+                        Lobortis pellentesque.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-aboutus-wrapper">
+                <div class="info-aboutus-text-content-left">
+                    <h2 class="info-aboutus-title">
+                        Nuestros <span>inicios</span>
+                    </h2>
+                    <p class="info-aboutus-description">
+                        Sem elit aenean convallis integer duis. Et pretium
+                        viverra eu ultrices adipiscing arcu sit mauris.
+                        Adipiscing amet amet libero nulla mi quam viverra.
+                        Lobortis pellentesque.
+                    </p>
+                    <p>
+                        Sem elit aenean convallis integer duis. Et pretium
+                        viverra eu ultrices adipiscing arcu sit mauris.
+                        Adipiscing amet amet libero nulla mi quam viverra.
+                        Lobortis pellentesque.
+                    </p>
+                </div>
+                <div class="info-aboutus-img-content">
+                    <img
+                        src={wip}
+                        alt="Nuestros inicios"
+                        class="info-aboutus-image"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

@@ -1,0 +1,117 @@
+.shapeWrapper {
+    position: absolute;
+    overflow: visible;
+    inset: 0;
+    z-index: -1;
+}
+
+.shape {
+    width: 50%;
+    height: 105%;
+    background: #1C6A9B;
+    transform: skew(-74deg);
+    top: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.shape-1 {
+    left: -215%;
+}
+
+.shape-2 {
+    left: 235%;
+}
+
+.info-section {
+    position: relative;
+    overflow: hidden;
+    padding-top: 2%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.info-title-main {
+    padding-top: 6%;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.info-company-name {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.info-company-name span {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #A1C743;
+    text-align: center;
+}
+
+.info-aboutus-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+    z-index: 1;
+    padding-inline: 4%;
+    padding-block: 2.5%;
+}
+
+.info-aboutus-img-content {
+    width: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.info-aboutus-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.info-aboutus-text-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem;
+}
+
+.info-aboutus-text-content-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1.5rem;
+    padding-left: 10rem;
+}
+
+.info-aboutus-title {
+    font-size: 2rem !important;
+}
+
+.info-aboutus-title span {
+    color: #A1C743;
+}
+
+.info-aboutus-text-content p {
+    font-size: 1.2rem;
+    max-width: 25rem;
+    padding-block: 0.8rem;
+}
+
+.info-aboutus-text-content-left p {
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.info-aboutus-text-content-left h2 {
+    font-size: 2rem;
+    text-align: right;
+}

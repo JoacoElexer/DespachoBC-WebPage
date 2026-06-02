@@ -1,105 +1,174 @@
+/* ================================
+   HERO — breakpoints responsivos
+   ================================ */
+
 .shapeWrapper {
-  position: absolute;
-  overflow: visible;
-  inset: 0;
-  z-index: -1;
+    position: absolute;
+    overflow: visible;
+    inset: 0;
+    z-index: -1;
 }
 
 .shape {
-  width: 18%;
-  height: 105%;
-  background: #A1C743;
-  transform: skew(-20deg);
-  top: 0;
-  position: absolute;
-  pointer-events: none;
+    width: 18%;
+    height: 105%;
+    background: #A1C743;
+    transform: skew(-20deg);
+    top: 0;
+    position: absolute;
+    pointer-events: none;
 }
 
-.shape-1 {
-  left: -20%;
-}
-
-.shape-2 {
-  left: 60%;
-}
-
+.shape-1 { left: -20%; }
+.shape-2 { left: 60%;  }
 
 .hero {
-  position: relative;
-  overflow: hidden;
-  padding-top: 2%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    padding-top: 2%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 .heroContent {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  padding: clamp(4rem, 5vw, 8rem);
-}
-
-.heroImage {
-  width: 85%;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: clamp(5rem, 6vw, 8rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 4rem);
+    gap: 2rem;
 }
 
 .hero-content-left {
-  width: 50%;
+    width: 50%;
+    min-width: 0;
 }
 
 .hero-content-right {
-  width: 50%;
-  display: flex;
-  align-content: center;
-  justify-content: center;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.heroImage {
+    width: 85%;
+    max-width: 520px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .hero-title {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .hero-title h1 {
-  font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
 }
 
-.hero-title-black {
-  color: black;
-  display: inline;
-}
-
-.hero-title-green {
-  color: #A1C743;
-  display: inline;
-}
+.hero-title-black { color: black;   display: inline; }
+.hero-title-green { color: #A1C743; display: inline; }
 
 .description {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    margin-top: 1rem;
+    line-height: 1.6;
 }
 
 .impact-phrase {
-  color: #1D83E2;
-  font-size: 1.8rem;
-  font-weight: 400;
-  padding-block: 3rem;
+    color: #1D83E2;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 400;
+    padding-block: clamp(1.2rem, 3vw, 3rem);
 }
 
 .attention-content {
-  font-size: 1.1rem;
-  font-weight: 500;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
 }
 
 .attention-text {
-  display: flex;
-  align-items: center;
-  width: 40%;
-  font-size: 1rem;
+    display: flex;
+    align-items: center;
+    width: 45%;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    min-width: 0;
+}
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+    .shape-2 { left: 68%; }
+
+    .heroContent {
+        gap: 1.5rem;
+    }
+
+    .heroImage {
+        width: 95%;
+    }
+}
+
+/* ── Móvil (≤ 768px) ── */
+@media (max-width: 768px) {
+    .heroContent {
+        flex-direction: column-reverse;  /* imagen arriba, texto abajo */
+        align-items: center;
+        padding: 5.5rem 1.25rem 2rem;
+        gap: 1.5rem;
+    }
+
+    .hero-content-left,
+    .hero-content-right {
+        width: 100%;
+    }
+
+    .heroImage {
+        width: 85%;
+        max-width: 380px;
+    }
+
+    .hero-title h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    /* Ocultar el BarChart en móvil — demasiado complejo para pantalla pequeña */
+    .attention-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .attention-text {
+        width: 100%;
+    }
+
+    /* Ocultar el gráfico de barras en móvil */
+    .attention-content > :last-child {
+        display: none;
+    }
+
+    /* Shapes más sutiles en móvil */
+    .shape {
+        opacity: 0.5;
+    }
+}
+
+/* ── Móvil pequeño (≤ 480px) ── */
+@media (max-width: 480px) {
+    .heroContent {
+        padding: 5rem 1rem 1.5rem;
+    }
+
+    .heroImage {
+        width: 100%;
+        max-width: none;
+    }
 }

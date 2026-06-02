@@ -1,6 +1,11 @@
-svg {
-    width: 45vh;
-    height: 45vh;
+/* ================================
+   PIE CHART — responsivo
+   ================================ */
+
+#demo {
+    /* En desktop: tamaño relativo al viewport */
+    width: clamp(200px, 40vw, 420px);
+    height: auto;
 }
 
 circle {

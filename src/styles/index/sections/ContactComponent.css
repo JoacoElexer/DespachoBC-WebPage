@@ -1,44 +1,68 @@
+/* ================================
+   CONTACTO — responsivo
+   ================================ */
+
 .contact-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
-    padding-inline: 3%;
-    padding-top: 3%;
-    padding-bottom: 8%;
+    gap: 2.5rem;
+    padding-inline: clamp(1rem, 4vw, 3%);
+    padding-top: clamp(2rem, 4vw, 3%);
+    padding-bottom: clamp(4rem, 7vw, 8%);
 }
 
 .contact-options-wrapper {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
-    gap: 10%;
+    gap: clamp(1rem, 5vw, 10%);
+    flex-wrap: wrap;
 }
 
 .contact-option {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    /* Ancho mínimo para que no se comprima demasiado */
+    min-width: 160px;
+    flex: 1;
+    max-width: 260px;
 }
 
 .contact-option h3 {
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 2vw, 1.4rem);
 }
 
 .contact-option p {
     text-align: center;
+    font-size: clamp(0.82rem, 1.2vw, 1rem);
+    line-height: 1.5;
 }
 
 .contact-img img {
     padding: 15%;
-    width: 85px;
+    width: clamp(56px, 6vw, 85px);
     height: auto;
     border-radius: 100%;
     background-color: #1D83E2;
+}
+
+/* ── Móvil (≤ 640px): columna única ── */
+@media (max-width: 640px) {
+    .contact-options-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contact-option {
+        max-width: 320px;
+        width: 100%;
+    }
 }

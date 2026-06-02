@@ -1,40 +1,83 @@
+/* ================================
+   SOBRE NOSOTROS — breakpoints responsivos
+   ================================ */
+
 .aboutus-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
     position: relative;
     z-index: 1;
-    padding: clamp(4rem, 5vw, 2rem);
+    padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
 }
 
 .aboutus-content-left {
     width: 50%;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
+    min-width: 0;
 }
 
 .aboutus-image {
     width: 85%;
+    max-width: 480px;
     border-radius: 10px;
+    display: block;
 }
 
 .aboutus-content-right {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 3rem;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    min-width: 0;
 }
 
 .aboutus-title {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    line-height: 1.2;
 }
 
 .aboutus-content-right p {
-    font-size: 1rem;
-    max-width: 25rem;
-    padding-block: 0.8rem;
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
+    line-height: 1.7;
+    padding-block: 0;
+    max-width: none;
+}
+
+/* ── Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+    .aboutus-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2.5rem 1.25rem;
+    }
+
+    .aboutus-content-left,
+    .aboutus-content-right {
+        width: 100%;
+    }
+
+    .aboutus-image {
+        width: 80%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .aboutus-content-right {
+        padding: 0;
+        gap: 1rem;
+    }
+}
+
+/* ── Móvil pequeño (≤ 480px) ── */
+@media (max-width: 480px) {
+    .aboutus-image {
+        width: 100%;
+        max-width: none;
+    }
 }

@@ -1,10 +1,16 @@
+/* ================================
+   SERVICE CARD — responsivo
+   ================================ */
+
 .services-card-component {
-    width: 80%;
+    width: 100%;
     background: #F8F8F8;
     border-radius: 14px;
-    box-shadow: 0 4px 5px rgb(0, 0, 0, 0.25);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease;
     border: 3px solid transparent;
+    padding: 1rem 0.5rem;
+    box-sizing: border-box;
 }
 
 .services-card-component:hover {
@@ -12,24 +18,48 @@
     border-color: #9AC433;
 }
 
+.services-card-component a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding-inline: 0.5rem;
+    gap: 0.5rem;
+}
+
 .service-card-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    width: clamp(48px, 8vw, 72px);
+    height: clamp(48px, 8vw, 72px);
+    margin-bottom: 0.5rem;
 }
 
 .service-card-icon img {
-    width: 70%;
+    width: 100%;
+    height: 100%;
     border-radius: 100%;
     background-color: #9AC433;
-    height: auto;
+    object-fit: cover;
 }
 
 .service-card-title {
-    font-size: 1rem;
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
     font-weight: bold;
     text-align: center;
-    margin-bottom: 0.5rem;
     color: #333333;
+    line-height: 1.3;
+}
+
+/* ── Móvil (≤ 480px) ── */
+@media (max-width: 480px) {
+    .service-card-title {
+        font-size: 0.75rem;
+    }
+
+    .service-card-icon {
+        width: 44px;
+        height: 44px;
+    }
 }

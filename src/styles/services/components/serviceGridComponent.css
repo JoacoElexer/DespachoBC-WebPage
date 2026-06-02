@@ -1,22 +1,37 @@
+/* ================================
+   SERVICE GRID — breakpoints responsivos
+   ================================ */
+
 .services-card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
-    gap: 3rem;
-    margin: 0 auto;
+    gap: 1.5rem;
+    width: 100%;
     max-width: 100%;
     padding: 1%;
-    overflow: auto;
 }
 
-@media (max-width: 1024px) {
+/* ── Tablet grande (≤ 1100px): 4 → 4 con gap menor ── */
+@media (max-width: 1100px) {
     .services-card-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 }
 
-@media (max-width: 640px) {
+/* ── Tablet (≤ 860px): 4 → 2 columnas ── */
+@media (max-width: 860px) {
     .services-card-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        padding: 2%;
+    }
+}
+
+/* ── Móvil pequeño (≤ 480px): 2 → 2 columnas compactas ── */
+@media (max-width: 480px) {
+    .services-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
     }
 }

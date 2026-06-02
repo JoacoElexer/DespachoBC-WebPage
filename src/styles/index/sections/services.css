@@ -1,3 +1,7 @@
+/* ================================
+   SERVICIOS — breakpoints responsivos
+   ================================ */
+
 .services-wrapper {
     display: flex;
     flex-direction: column;
@@ -5,27 +9,33 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    padding: clamp(2rem, 3vw, 4rem);
-    max-width: 100%;
+    padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 4vw, 3rem);
 }
 
 .services-title-and-description {
     text-align: center;
-    width: 60%;
+    width: min(60%, 700px);
     margin-bottom: 2rem;
 }
 
-.services-title{
-    font-size: 1.8rem;
-
+.services-title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
 }
 
 .services-description {
     color: #383838;
-    font-size: 1.2rem;
-    margin-top: 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    margin-top: 0.75rem;
+    line-height: 1.6;
 }
 
 .services-description-span {
     color: #A1C743;
+}
+
+/* ── Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+    .services-title-and-description {
+        width: 100%;
+    }
 }

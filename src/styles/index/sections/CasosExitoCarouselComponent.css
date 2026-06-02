@@ -1,21 +1,60 @@
+/* ================================
+   CASOS DE ÉXITO CAROUSEL — responsivo
+   ================================ */
+
 .exito-component-wrapper {
     display: flex;
     flex-direction: row;
-    padding-inline: 5%;
-    gap: 50px;
+    padding-inline: clamp(1rem, 4vw, 5%);
+    gap: clamp(1rem, 3vw, 50px);
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+}
+
+.exito-component-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .exito-card {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2%;
+    padding: 1rem;
     background: #F8F8F8;
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Tamaño fijo para que el scroll funcione bien */
+    min-width: clamp(200px, 40vw, 280px);
+    scroll-snap-align: start;
+    flex-shrink: 0;
 }
 
 .exito-card-img {
     width: 100%;
     height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ── Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+    .exito-component-wrapper {
+        padding-inline: 1rem;
+        gap: 1rem;
+    }
+
+    .exito-card {
+        min-width: clamp(180px, 65vw, 260px);
+    }
+}
+
+/* ── Móvil (≤ 480px) ── */
+@media (max-width: 480px) {
+    .exito-card {
+        min-width: 75vw;
+    }
 }

@@ -1,11 +1,23 @@
+/* ================================
+   NUESTRO COMPROMISO — sección wrapper
+   ================================ */
+
+.ncWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+    gap: 2rem;
+}
+
 .ncTitle {
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 3vw, 2rem);
     text-align: center;
     font-weight: 400;
 }
 
 .ncTitleSpan {
-    font-size: 2rem;
+    font-size: inherit;
     text-align: center;
     font-weight: 500;
     color: #A1C743;

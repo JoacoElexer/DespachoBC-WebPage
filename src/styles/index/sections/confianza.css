@@ -1,3 +1,7 @@
+/* ================================
+   CONFIANZA — breakpoints responsivos
+   ================================ */
+
 .trust-section-wrapper {
     display: flex;
     flex-direction: row;
@@ -5,47 +9,87 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    padding: clamp(4rem, 5vw, 8rem);
+    padding: clamp(2.5rem, 5vw, 6rem) clamp(1.5rem, 5vw, 5rem);
+    gap: 3rem;
 }
 
 .trust-section-content-left {
     width: 50%;
+    min-width: 0;
 }
 
 .trust-titles {
-    padding-bottom: 1.9rem;
+    padding-bottom: 1.5rem;
 }
 
 .trust-title-1 {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    line-height: 1.2;
 }
 
 .trust-title-2 {
     color: #1D83E2;
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
     font-weight: 500;
+    line-height: 1.2;
 }
 
 .trust-description-1 {
-    font-size: 1.15rem;
+    font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
 }
 
 .trust-description-2 {
-    font-size: 1.15rem;
-    padding-block: 1.7rem;
+    font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+    padding-block: 1.2rem;
+    line-height: 1.6;
 }
 
 .trust-section-content-right {
     width: 50%;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
+    min-width: 0;
 }
 
 .trust-unordered-list {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 }
 
-.trust-unordered-list li {
-    margin-block: 0.2rem;
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+    .trust-section-wrapper {
+        gap: 2rem;
+    }
+}
+
+/* ── Móvil (≤ 768px) ── */
+@media (max-width: 768px) {
+    .trust-section-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.5rem 1.25rem;
+        gap: 1.5rem;
+    }
+
+    .trust-section-content-left,
+    .trust-section-content-right {
+        width: 100%;
+    }
+
+    /* El PieChart centrado en móvil */
+    .trust-section-content-right {
+        justify-content: center;
+    }
+
+    /* Limitar tamaño del SVG para que no ocupe toda la pantalla */
+    .trust-section-content-right svg {
+        width: clamp(200px, 60vw, 300px) !important;
+        height: auto !important;
+    }
 }

@@ -1,0 +1,19 @@
+---
+const { title, description, icon } = Astro.props;
+---
+
+<style>
+    @import url("../../styles/services/components/serviceDetailCardComponent.css");
+</style>
+
+<div class="detail-card">
+    <div class="detail-card-icon-wrapper">
+        <div class="detail-card-icon-bg">
+            <img src={icon} alt={title} class="detail-card-icon" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>●</span>'" />
+        </div>
+    </div>
+    <div class="detail-card-content">
+        <h3 class="detail-card-title">{title}</h3>
+        <p class="detail-card-description">{description}</p>
+    </div>
+</div>

@@ -1,90 +1,82 @@
 ---
-// TODO: definir links
 const servicios = [
-    { name: "Contable", href: "#" },
-    { name: "Fiscal", href: "#" },
-    { name: "Capacitación", href: "#" },
-    { name: "Recursos Humanos", href: "#" },
-    { name: "Servicio Laboral", href: "#" },
-    { name: "Servicios para trabajadores", href: "#" },
-    { name: "Servicios para empresas", href: "#" },
-    { name: "Derecho Corporativo", href: "#" },
+    { name: "Contable",                   href: "/servicio-contable"           },
+    { name: "Fiscal",                     href: "/servicio-fiscal"             },
+    { name: "Capacitación",               href: "/capacitacion"                },
+    { name: "Recursos Humanos",           href: "/recursos-humanos"            },
+    { name: "Servicio Laboral",           href: "/derecho-laboral"             },
+    { name: "Servicios para Trabajadores",href: "/servicios-para-trabajadores" },
+    { name: "Servicios para Empresas",    href: "/servicios-para-empresas"     },
+    { name: "Derecho Corporativo",        href: "/derecho-corporativo"         },
 ];
 
 const nosotros = [
-    { name: "¿Quienes somos?", href: "#" },
-    { name: "Nuestros inicios", href: "#" },
+    { name: "¿Quiénes somos?", href: "/info" },
+    { name: "Nuestros inicios", href: "/info" },
 ];
 
-const logo = "/logo/Logo_BC.png";
-const phoneIcon = "assets/icons/phone.png";
-const emailIcon = "assets/icons/envelope-simple.png";
+const logo        = "/logo/Logo_BC.png";
+const phoneIcon   = "/assets/icons/phone.png";
+const emailIcon   = "/assets/icons/envelope-simple.png";
 ---
 
-<!-- TODO: Conseguir numeros de telefono -->
 <style>
     @import url("../../styles/global/FooterStyles.css");
 </style>
-<div class="footerWrapper">
+
+<footer class="footerWrapper">
+
+    <!-- Columna izquierda: Info + copyright -->
     <div class="footerColumn" id="colInfo">
-        <img src={logo} alt="footerLogo" class="footerLogo" />
+        <img src={logo} alt="Logo Despacho BC" class="footerLogo" />
         <p id="footer-info-text-L">
             Ofrecemos atención personalizada, garantizando soluciones contables
             precisas y un acompañamiento constante en cada paso.
         </p>
-        <p>© Despacho BC</p>
+        <p>© Despacho BC 2025</p>
         <p>Desarrollado por XXXX</p>
     </div>
 
+    <!-- Columna central: Servicios + Nosotros -->
     <div class="midfooterColumn">
         <div class="footerMidColumn" id="colServicios">
             <h3>Servicios</h3>
             <ul>
-                {
-                    servicios.map((item) => (
-                        <li>
-                            <a href={item.href}>{item.name}</a>
-                        </li>
-                    ))
-                }
+                {servicios.map(item => (
+                    <li><a href={item.href}>{item.name}</a></li>
+                ))}
             </ul>
         </div>
 
         <div class="footerMidColumn" id="colNosotros">
             <h3>Nosotros</h3>
             <ul>
-                {
-                    nosotros.map((item) => (
-                        <li>
-                            <a href={item.href}>{item.name}</a>
-                        </li>
-                    ))
-                }
+                {nosotros.map(item => (
+                    <li><a href={item.href}>{item.name}</a></li>
+                ))}
             </ul>
         </div>
     </div>
 
+    <!-- Columna derecha: Contacto -->
     <div class="footerColumn" id="colContacto">
-        <a href="#"><h3>Contáctanos!</h3></a>
-        <!-- TODO: definir link de contacto -->
+        <h3>Contáctanos</h3>
+
         <div class="contactsContainer">
-            <img src={phoneIcon} alt="Tel" class="contactIcon">
+            <img src={phoneIcon} alt="Teléfono" class="contactIcon" />
             <div class="phoneContacts">
-                <p>Teléfono: +52 123 456 7890</p>
-                <!-- TODO: definir telefono -->
-                <p>Teléfono: +52 123 456 7890</p>
-                <!-- TODO: definir telefono -->
+                <p>+52 (477) 658 9123 - Whatsapp</p>
+                <p>+52 (477) 1234567 - Llamadas</p>
             </div>
         </div>
+
         <div class="contactsContainer">
-            <img src={emailIcon} alt="Email" class="contactIcon">
+            <img src={emailIcon} alt="Email" class="contactIcon" />
             <div class="emailContacts">
-                <p>Email: contacto@despachobc.com</p>
-                <!-- TODO: definir email -->
-                <p>Email: contacto@despachobc.com</p>
-                <!-- TODO: definir email -->
+                <p>contabilidad@despachobc.com</p>
+                <p>gerencia@despachobc.com</p>
             </div>
         </div>
     </div>
-    <!-- TODO: Agregar enlaces a redes sociales -->
-</div>
+
+</footer>

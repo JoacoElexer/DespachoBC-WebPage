@@ -1,30 +1,24 @@
 ---
 const navItems = [
-    { name: 'Inicio', href: '/'},
-    { name: 'Servicios', href: '/#services'},
-    { name: 'Nosotros', href: '/#about-us'}
-]
-const serviceItems = [
-    { name: 'Servicio Contable', href: '#'},
-    { name: 'Servicio Fiscal', href: '#'},
-    { name: 'Capacitación', href: '#'},
-    { name: 'Recursos Humanos', href: '#'},
-    { name: 'Servicios para trabajadores', href: '#'},
-    { name: 'Servicios para empresas', href: '#'},
-    { name: 'Derecho Laboral', href: '#'},
-    { name: 'Derecho Corporativo', href: '#'},
-]
-const contactLink = { name: 'Contacto', href: '#contacto'};
-const logo = '/logo/Logo_BC_transparente.png';
-const whatsappIcon = 'assets/icons/whatsapp-logo.png';
+    { name: 'Inicio',    href: '/'          },
+    { name: 'Servicios', href: '/#services' },
+    { name: 'Nosotros',  href: '/#about-us' }
+];
+const contactLink = { name: 'Contacto', href: '#contacto' };
+const logo         = '/logo/Logo_BC_transparente.png';
+const whatsappIcon = '/assets/icons/whatsapp-logo.png';
 ---
 
 <style>
     @import url('../../styles/global/NavBarStyles.css');
 </style>
+
+<!-- ── Navbar principal ── -->
 <div class="navbarWrapper">
+
+    <!-- Píldora: logo + links (desktop) -->
     <div class="navbarLinksContainer">
-        <img src={logo} alt="MainLogo" class="navbarLogo"/>
+        <img src={logo} alt="Despacho BC" class="navbarLogo" />
         <div class="listContainer">
             <ul class="links">
                 {navItems.map(item => (
@@ -33,8 +27,77 @@ const whatsappIcon = 'assets/icons/whatsapp-logo.png';
             </ul>
         </div>
     </div>
+
+    <!-- Botón contacto (desktop) -->
     <div class="navbarContactBtn">
         <a href={contactLink.href}>{contactLink.name}</a>
-        <img src={whatsappIcon} alt="WhatsAppIcon" class="whatsappIcon"/>
+        <img src={whatsappIcon} alt="WhatsApp" class="whatsappIcon" />
     </div>
+
+    <!-- Botón hamburguesa (móvil) — oculto en desktop vía CSS -->
+    <button
+        class="navbarHamburger"
+        id="hamburgerBtn"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+    >
+        <span class="hamburgerLine"></span>
+        <span class="hamburgerLine"></span>
+        <span class="hamburgerLine"></span>
+    </button>
 </div>
+
+<!--
+    Drawer móvil — siempre en el DOM.
+    Empieza con visibility:hidden + pointer-events:none,
+    nunca con display:none, para que la transición CSS funcione.
+-->
+<div class="mobileMenu" id="mobileMenu">
+    <div class="mobileMenuOverlay" id="mobileMenuOverlay"></div>
+    <nav class="mobileMenuPanel">
+        <ul class="mobileMenuLinks">
+            {navItems.map(item => (
+                <li>
+                    <a href={item.href} class="mobileNavLink">{item.name}</a>
+                </li>
+            ))}
+        </ul>
+        <a href={contactLink.href} class="mobileContactBtn mobileNavLink">
+            <span>{contactLink.name}</span>
+            <img src={whatsappIcon} alt="WhatsApp" />
+        </a>
+    </nav>
+</div>
+
+<script>
+    const hamburgerBtn  = document.getElementById('hamburgerBtn')  as HTMLButtonElement;
+    const mobileMenu    = document.getElementById('mobileMenu')    as HTMLElement;
+    const mobileOverlay = document.getElementById('mobileMenuOverlay') as HTMLElement;
+    const mobileLinks   = document.querySelectorAll<HTMLElement>('.mobileNavLink');
+
+    function openMenu(): void {
+        mobileMenu.classList.add('is-open');
+        hamburgerBtn.classList.add('is-open');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu(): void {
+        mobileMenu.classList.remove('is-open');
+        hamburgerBtn.classList.remove('is-open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    mobileOverlay.addEventListener('click', closeMenu);
+
+    mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+</script>

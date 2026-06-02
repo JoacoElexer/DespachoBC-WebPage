@@ -1,80 +1,337 @@
+/* ===========================
+   NAVBAR — Variables
+   =========================== */
+:root {
+    --nav-height: 64px;
+    --nav-bg: #ffffff;
+    --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --nav-border: #D9D9D9;
+    --nav-blue: #1C7EFF;
+    --nav-link-color: #1a1a1a;
+    --nav-contact-text: #ffffff;
+}
+
+/* ===========================
+   Wrapper principal — DESKTOP
+   =========================== */
 .navbarWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 1rem;
     background-color: transparent;
-    height: auto;
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 9999;
-    padding-top: 25px;
+    padding: 14px 32px;
+    box-sizing: border-box;
+    /* El hamburguesa está en el DOM pero oculto en desktop */
 }
 
+/* ===========================
+   Píldora: Logo + Links
+   =========================== */
 .navbarLinksContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff;
-    width: 40%;
-    height: 5cap;
-    gap: 10%;
-    opacity: 0.85;
-    box-shadow: 0 4px 6px rgb(51, 51, 51 , 0.25);
+    background-color: var(--nav-bg);
+    height: var(--nav-height);
+    opacity: 0.95;
+    box-shadow: var(--nav-shadow);
     border-radius: 100px;
-    border: 1px solid #D9D9D9;
-    padding-inline: 20px;
+    border: 1px solid var(--nav-border);
+    padding: 0 18px 0 14px;
+    /* Tamaño fijo razonable para que no compita con el botón */
+    width: clamp(380px, 45vw, 600px);
+    flex-shrink: 0;
+    gap: 1rem;
+    overflow: hidden;
 }
 
 .navbarLogo {
-    height: 4cap;
+    height: 38px;
     width: auto;
+    flex-shrink: 0;
 }
 
 .listContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
 }
 
 .links {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 75px;
+    justify-content: flex-end;
+    gap: 2rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
 }
 
 .links a {
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: #000000;
+    color: var(--nav-link-color);
+    transition: color 0.2s ease;
 }
 
-/* TODO: revisar tamaño de fuente (Se rompe con el cambio de tamaño de pantalla) */
+.links a:hover {
+    color: var(--nav-blue);
+}
+
+/* ===========================
+   Píldora: Botón Contacto
+   =========================== */
 .navbarContactBtn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
-    height: 5cap;
-    background-color: #1C7EFF;
-    opacity: 85%;
+    height: var(--nav-height);
+    padding: 0 1.25rem;
+    background-color: var(--nav-blue);
     border-radius: 100px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    gap: 20%;
+    box-shadow: 0 2px 10px rgba(28, 126, 255, 0.35);
+    gap: 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+    /* En desktop es visible */
+    opacity: 0.95;
 }
 
 .navbarContactBtn a {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: #FFFFFF;
+    color: var(--nav-contact-text);
+    white-space: nowrap;
 }
 
 .whatsappIcon {
-    height: 4cap;
+    height: 26px;
+    width: 26px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* ===========================
+   Hamburguesa — oculta en desktop
+   =========================== */
+.navbarHamburger {
+    display: none; /* solo visible en móvil via media query */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 48px;
+    height: 48px;
+    background: var(--nav-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 14px;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    box-shadow: var(--nav-shadow);
+    /* reset estilos de <button> */
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.hamburgerLine {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+    pointer-events: none;
+}
+
+.navbarHamburger.is-open .hamburgerLine:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.navbarHamburger.is-open .hamburgerLine:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.navbarHamburger.is-open .hamburgerLine:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===========================
+   Drawer móvil — SIEMPRE en el DOM,
+   pero invisible/inerte hasta .is-open
+   =========================== */
+.mobileMenu {
+    /* Ocupa toda la pantalla como overlay */
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    /* Empieza invisible e inerte */
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.mobileMenuOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobileMenuPanel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(300px, 82vw);
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -4px 0 28px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    padding: 88px 1.75rem 2rem;
+    gap: 0;
+    /* Empieza fuera de pantalla */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+/* Estado abierto */
+.mobileMenu.is-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+.mobileMenu.is-open .mobileMenuOverlay {
+    opacity: 1;
+}
+.mobileMenu.is-open .mobileMenuPanel {
+    transform: translateX(0);
+}
+
+/* Links del drawer */
+.mobileMenuLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 1.25rem;
+}
+
+.mobileMenuLinks li a {
+    display: block;
+    padding: 0.9rem 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #f2f2f2;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+.mobileMenuLinks li:last-child a {
+    border-bottom: none;
+}
+.mobileMenuLinks li a:hover {
+    color: var(--nav-blue);
+    padding-left: 6px;
+}
+
+/* Botón contacto dentro del drawer */
+.mobileContactBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.25rem;
+    background-color: var(--nav-blue);
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(28, 126, 255, 0.3);
+}
+.mobileContactBtn span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+.mobileContactBtn img {
+    height: 22px;
     width: auto;
+}
+
+/* ===========================
+   TABLET  (≤ 960px)
+   Achica la píldora pero mantiene links
+   =========================== */
+@media (max-width: 960px) {
+    .navbarWrapper {
+        padding: 12px 20px;
+    }
+
+    .navbarLinksContainer {
+        width: clamp(280px, 55vw, 480px);
+    }
+
+    .links {
+        gap: 1.25rem;
+    }
+
+    .links a {
+        font-size: 0.88rem;
+    }
+
+    .navbarContactBtn {
+        padding: 0 1rem;
+    }
+
+    .navbarContactBtn a {
+        font-size: 0.88rem;
+    }
+
+    .whatsappIcon {
+        height: 22px;
+        width: 22px;
+    }
+}
+
+/* ===========================
+   MÓVIL  (≤ 680px)
+   Oculta links + contacto, muestra hamburguesa
+   =========================== */
+@media (max-width: 680px) {
+    .navbarWrapper {
+        justify-content: space-between;
+        padding: 10px 14px;
+        gap: 0;
+    }
+
+    /* La píldora solo muestra el logo */
+    .navbarLinksContainer {
+        width: auto;
+        flex-shrink: 0;
+        gap: 0;
+        padding: 0 14px;
+    }
+
+    .listContainer {
+        display: none;
+    }
+
+    /* Ocultar botón de contacto desktop */
+    .navbarContactBtn {
+        display: none;
+    }
+
+    /* Mostrar hamburguesa */
+    .navbarHamburger {
+        display: flex;
+    }
 }

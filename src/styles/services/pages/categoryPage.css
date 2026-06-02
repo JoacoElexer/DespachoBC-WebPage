@@ -1,0 +1,85 @@
+/* ===== Page Header ===== */
+.services-page-header {
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 8% 4rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Shapes decorativos - misma lógica que index/info */
+.services-page-header .shapeWrapper {
+    position: absolute;
+    overflow: visible;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.services-page-header .shape {
+    width: 18%;
+    height: 110%;
+    background: #A1C743;
+    transform: skew(-20deg);
+    top: 0;
+    position: absolute;
+    opacity: 0.18;
+}
+
+.services-page-header .shape-1 {
+    left: -6%;
+}
+
+.services-page-header .shape-2 {
+    left: 90%;
+}
+
+.services-page-header-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.services-page-eyebrow {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1D83E2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.services-page-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.15;
+}
+
+.services-page-title span {
+    color: #9AC433;
+    font-weight: 500;
+}
+
+/* ===== Services Grid Section ===== */
+.services-detail-section {
+    padding: 4rem 6% 5rem;
+    background-color: #fafafa;
+}
+
+.services-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== Divider ===== */
+.services-divider {
+    width: 85%;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid #E0E0E0;
+}

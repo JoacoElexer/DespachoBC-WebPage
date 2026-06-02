@@ -1,0 +1,31 @@
+---
+import { otherCategories } from "../../data/servicios.js";
+
+const { currentCategory } = Astro.props;
+
+// Filtrar la categoría actual para no repetirla
+const filtered = otherCategories.filter(cat => !cat.href.includes(currentCategory));
+---
+
+<style>
+    @import url("../../styles/services/components/otherServicesComponent.css");
+</style>
+
+<div class="other-services-section">
+    <h2 class="other-services-title">Más de nuestros servicios</h2>
+    <div class="other-services-grid">
+        {filtered.map((cat) => (
+            <a href={cat.href} class="other-service-card">
+                <div class="other-service-icon-bg">
+                    <img
+                        src={cat.icon}
+                        alt={cat.title}
+                        class="other-service-icon"
+                        onerror="this.style.display='none'"
+                    />
+                </div>
+                <span class="other-service-label">{cat.title}</span>
+            </a>
+        ))}
+    </div>
+</div>

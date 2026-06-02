@@ -1,32 +1,110 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const wip = "/assets/WorkInProgress.jpg";
+import { servicios, categoryTitles } from '../data/servicios.js';
 
 export async function getStaticPaths() {
     return [
-        { params: {category: 'servicio-contable' }, props: {title: 'Servicio Contable' } },
-        { params: {category: 'servicio-fiscal' }, props: {title: 'Servicio Fiscal' } },
-        { params: {category: 'capacitacion' }, props: {title: 'Capacitación' } },
-        { params: {category: 'recursos-humanos' }, props: {title: 'Recursos Humanos' } },
-        { params: {category: 'servicios-para-trabajadores' }, props: {title: 'Servicios para Trabajadores' } },
-        { params: {category: 'servicios-para-empresas' }, props: {title: 'Servicios para Empresas' } },
-        { params: {category: 'derecho-laboral' }, props: {title: 'Derecho Laboral' } },
-        { params: {category: 'derecho-corporativo' }, props: {title: 'Derecho Corporativo' } },
-    ]
+        { params: { category: 'servicio-contable'           }, props: { title: 'Servicio Contable'           } },
+        { params: { category: 'servicio-fiscal'             }, props: { title: 'Servicios Fiscales'           } },
+        { params: { category: 'capacitacion'                }, props: { title: 'Capacitación'                } },
+        { params: { category: 'recursos-humanos'            }, props: { title: 'Recursos Humanos'            } },
+        { params: { category: 'servicios-para-trabajadores' }, props: { title: 'Servicios para Trabajadores'  } },
+        { params: { category: 'servicios-para-empresas'     }, props: { title: 'Servicios para Empresas'      } },
+        { params: { category: 'derecho-laboral'             }, props: { title: 'Derecho Laboral'             } },
+        { params: { category: 'derecho-corporativo'         }, props: { title: 'Derecho Corporativo'         } },
+    ];
 }
 
-const {category} = Astro.params;
-const {title} = Astro.props;
+const { category } = Astro.params;
+const { title }    = Astro.props;
+
+// Filtrar servicios de la categoría actual
+const categoryServices = servicios.filter(s => s.category === category);
+
+// Todas las categorías excepto la actual, para la sección "Más servicios"
+const allCategories = [
+    { title: "Servicio Contable",            href: "/servicio-contable",           icon: "/assets/icons/services/contable.svg"    },
+    { title: "Servicio Fiscal",              href: "/servicio-fiscal",              icon: "/assets/icons/services/fiscal.svg"      },
+    { title: "Capacitación",                 href: "/capacitacion",                 icon: "/assets/icons/services/capacitacion.svg"},
+    { title: "Recursos Humanos",             href: "/recursos-humanos",             icon: "/assets/icons/services/rrhh.svg"        },
+    { title: "Servicio Laboral",             href: "/derecho-laboral",              icon: "/assets/icons/services/laboral.svg"     },
+    { title: "Servicios para trabajadores",  href: "/servicios-para-trabajadores",  icon: "/assets/icons/services/trabajadores.svg"},
+    { title: "Servicios para empresas",      href: "/servicios-para-empresas",      icon: "/assets/icons/services/empresas.svg"    },
+    { title: "Derecho corporativo",          href: "/derecho-corporativo",          icon: "/assets/icons/services/corporativo.svg" },
+];
+
+const otherServices = allCategories.filter(cat => !cat.href.includes(category));
 ---
 
+<style>
+    @import url("../styles/services/pages/categoryPage.css");
+    @import url("../styles/services/components/serviceDetailCardComponent.css");
+    @import url("../styles/services/components/otherServicesComponent.css");
+</style>
+
 <BaseLayout title={title}>
-    <section class="pageTitles">
 
+    <!-- ── Header ── -->
+    <section class="services-page-header">
+        <div class="shapeWrapper">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="services-page-header-content">
+            <span class="services-page-eyebrow">Servicios</span>
+            <h1 class="services-page-title">
+                {title.split(' ').length > 1
+                    ? (<>{title.split(' ').slice(0, -1).join(' ')} <span>{title.split(' ').at(-1)}</span></>)
+                    : (<span>{title}</span>)
+                }
+            </h1>
+        </div>
     </section>
-    <section class="services">
 
+    <!-- ── Grid de servicios ── -->
+    <section class="services-detail-section">
+        <div class="services-detail-grid">
+            {categoryServices.map((servicio) => (
+                <div class="detail-card">
+                    <div class="detail-card-icon-wrapper">
+                        <div class="detail-card-icon-bg">
+                            <img
+                                src={servicio.icon}
+                                alt={servicio.title}
+                                class="detail-card-icon"
+                                onerror="this.style.display='none'"
+                            />
+                        </div>
+                    </div>
+                    <div class="detail-card-content">
+                        <h3 class="detail-card-title">{servicio.title}</h3>
+                        <p class="detail-card-description">{servicio.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
     </section>
-    <section class="recommendedServices">
 
+    <hr class="services-divider" />
+
+    <!-- ── Más servicios ── -->
+    <section class="other-services-section">
+        <h2 class="other-services-title">Más de nuestros servicios</h2>
+        <div class="other-services-grid">
+            {otherServices.map((cat) => (
+                <a href={cat.href} class="other-service-card">
+                    <div class="other-service-icon-bg">
+                        <img
+                            src={cat.icon}
+                            alt={cat.title}
+                            class="other-service-icon"
+                            onerror="this.style.display='none'"
+                        />
+                    </div>
+                    <span class="other-service-label">{cat.title}</span>
+                </a>
+            ))}
+        </div>
     </section>
+
 </BaseLayout>

@@ -5,11 +5,8 @@ const { currentCategory } = Astro.props;
 
 // Filtrar la categoría actual para no repetirla
 const filtered = otherCategories.filter(cat => !cat.href.includes(currentCategory));
+import "../../styles/services/components/Otherservicescomponent.css";
 ---
-
-<style>
-    @import url("../../styles/services/components/otherServicesComponent.css");
-</style>
 
 <div class="other-services-section">
     <h2 class="other-services-title">Más de nuestros servicios</h2>

@@ -34,12 +34,12 @@ const allCategories = [
 ];
 
 const otherServices = allCategories.filter(cat => !cat.href.includes(category));
+import "../styles/services/pages/categoryPage.css";
+import "../styles/services/components/serviceDetailCardComponent.css";
+import "../styles/services/components/otherServicesComponent.css";
 ---
 
 <style>
-    @import url("../styles/services/pages/categoryPage.css");
-    @import url("../styles/services/components/serviceDetailCardComponent.css");
-    @import url("../styles/services/components/otherServicesComponent.css");
 </style>
 
 <BaseLayout title={title}>

@@ -28,7 +28,7 @@
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     /* Tamaño fijo para que el scroll funcione bien */
-    min-width: clamp(200px, 40vw, 280px);
+    min-width: clamp(140px, 28vw, 200px);
     scroll-snap-align: start;
     flex-shrink: 0;
 }
@@ -48,13 +48,13 @@
     }
 
     .exito-card {
-        min-width: clamp(180px, 65vw, 260px);
+        min-width: clamp(130px, 45vw, 180px);
     }
 }
 
 /* ── Móvil (≤ 480px) ── */
 @media (max-width: 480px) {
     .exito-card {
-        min-width: 75vw;
+        min-width: 55vw;
     }
 }

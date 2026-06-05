@@ -16,7 +16,7 @@
     border-color: #9AC433;
 }
 
-.detail-card-icon-wrapper {
+.detail-card-icon-wrapper { 
     display: flex;
     align-items: flex-start;
 }

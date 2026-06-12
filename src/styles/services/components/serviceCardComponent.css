@@ -34,14 +34,16 @@
     width: clamp(48px, 8vw, 72px);
     height: clamp(48px, 8vw, 72px);
     margin-bottom: 0.5rem;
+    border-radius: 100%;
+    background-color: #9AC433;
 }
 
 .service-card-icon img {
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    background-color: #9AC433;
-    object-fit: cover;
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+    /* Convierte el ícono (stroke negro) a blanco sobre el círculo verde */
+    filter: brightness(0) invert(1);
 }
 
 .service-card-title {

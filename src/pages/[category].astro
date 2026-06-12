@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { servicios, categoryTitles } from '../data/servicios.js';
+import { servicios, categoryTitles, allCategories } from '../data/servicios.js';
 
 export async function getStaticPaths() {
     return [
@@ -22,18 +22,8 @@ const { title }    = Astro.props;
 const categoryServices = servicios.filter(s => s.category === category);
 
 // Todas las categorías excepto la actual, para la sección "Más servicios"
-const allCategories = [
-    { title: "Servicio Contable",            href: "/servicio-contable",           icon: "/assets/icons/services/contable.svg"    },
-    { title: "Servicio Fiscal",              href: "/servicio-fiscal",              icon: "/assets/icons/services/fiscal.svg"      },
-    { title: "Capacitación",                 href: "/capacitacion",                 icon: "/assets/icons/services/capacitacion.svg"},
-    { title: "Recursos Humanos",             href: "/recursos-humanos",             icon: "/assets/icons/services/rrhh.svg"        },
-    { title: "Servicio Laboral",             href: "/derecho-laboral",              icon: "/assets/icons/services/laboral.svg"     },
-    { title: "Servicios para trabajadores",  href: "/servicios-para-trabajadores",  icon: "/assets/icons/services/trabajadores.svg"},
-    { title: "Servicios para empresas",      href: "/servicios-para-empresas",      icon: "/assets/icons/services/empresas.svg"    },
-    { title: "Derecho corporativo",          href: "/derecho-corporativo",          icon: "/assets/icons/services/corporativo.svg" },
-];
-
 const otherServices = allCategories.filter(cat => !cat.href.includes(category));
+
 import "../styles/services/pages/categoryPage.css";
 import "../styles/services/components/serviceDetailCardComponent.css";
 import "../styles/services/components/otherServicesComponent.css";
@@ -104,4 +94,4 @@ import "../styles/services/components/otherServicesComponent.css";
         </div>
     </section>
 
-</BaseLayout> 
+</BaseLayout>

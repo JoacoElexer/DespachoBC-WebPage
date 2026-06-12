@@ -1,58 +1,13 @@
 ---
 import Card from "./ServiceCardComponent.astro";
-const cardIcons = [
-    '/assets/WorkInProgress.jpg',
-    '/assets/WorkInProgress.jpg',
-    '/assets/WorkInProgress.jpg',
-    '/assets/WorkInProgress.jpg',
-    '/assets/WorkInProgress.jpg',
-    '/assets/WorkInProgress.jpg',
-    '/assets/WorkInProgress.jpg',
-    '/assets/WorkInProgress.jpg',
-];
+import { allCategories } from "../../data/servicios.js";
 
-const services = [
-    {
-        title: "Servicio Contable",
-        icon: cardIcons[0],
-        category: "servicio-contable"
-    },
-    {
-        title: "Servicio Fiscal",
-        icon: cardIcons[1],
-        category: "servicio-fiscal"
-    },
-    {
-        title: "Capacitación",
-        icon: cardIcons[2],
-        category: "capacitacion"
-    },
-    {
-        title: "Recursos Humanos",
-        icon: cardIcons[3],
-        category: "recursos-humanos"
-    },
-    {
-        title: "Servicios para Trabajadores",
-        icon: cardIcons[4],
-        category: "servicios-para-trabajadores"
-    },
-    {
-        title: "Servicios para Empresas",
-        icon: cardIcons[5],
-        category: "servicios-para-empresas"
-    },
-    {
-        title: "Derecho Laboral",
-        icon: cardIcons[6],
-        category: "derecho-laboral"
-    },
-    {
-        title: "Derecho Corporativo",
-        icon: cardIcons[7],
-        category: "derecho-corporativo"
-    },
-]
+const services = allCategories.map(cat => ({
+    title: cat.title,
+    icon: cat.icon,
+    category: cat.href,
+}));
+
 import "../../styles/services/components/serviceGridComponent.css";
 ---
 <div class="services-card-grid">

@@ -1,3 +1,7 @@
+/* ================================
+   INFO / NOSOTROS — responsivo
+   ================================ */
+
 .shapeWrapper {
     position: absolute;
     overflow: visible;
@@ -22,95 +26,154 @@
 .shape-2 {
     left: 227%;
 }
-
 .info-section {
     position: relative;
     overflow: hidden;
     padding-top: 2%;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
-
+ 
+.infoContent {
+    position: relative;
+    z-index: 1;
+    padding-bottom: clamp(2rem, 4vw, 4rem);
+}
+ 
+/* ===== Títulos superiores ===== */
 .info-title-main {
-    padding-top: 6%;
-    font-size: 2rem;
+    padding-top: clamp(5.5rem, 8vw, 7rem);
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
     font-weight: 500;
     text-align: center;
     margin-bottom: 0.5rem;
 }
-
+ 
 .info-company-name {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 400;
     text-align: center;
 }
-
+ 
 .info-company-name span {
-    font-size: 2rem;
+    font-size: inherit;
     font-weight: 500;
     color: #A1C743;
-    text-align: center;
 }
-
+ 
+/* ===== Bloques ¿Quiénes somos? / Nuestros inicios ===== */
 .info-aboutus-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    gap: 5rem;
+    gap: clamp(2rem, 5vw, 5rem);
     position: relative;
     z-index: 1;
-    padding-inline: 4%;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4%);
 }
-
+ 
 .info-aboutus-img-content {
     width: 50%;
     display: flex;
     align-content: center;
     justify-content: center;
+    min-width: 0;
 }
-
+ 
 .info-aboutus-image {
     width: 100%;
+    max-width: 480px;
     border-radius: 10px;
+    display: block;
 }
-
-.info-aboutus-text-content {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 3rem;
-}
-
+ 
+.info-aboutus-text-content,
 .info-aboutus-text-content-left {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: end;
-    gap: 1.5rem;
-    padding-left: 10rem;
+    gap: 1.25rem;
+    padding: clamp(1rem, 3vw, 3rem);
+    min-width: 0;
 }
-
+ 
+.info-aboutus-text-content-left {
+    align-items: flex-end;
+}
+ 
 .info-aboutus-title {
-    font-size: 2rem !important;
+    font-size: clamp(1.5rem, 3vw, 2rem) !important;
+    line-height: 1.2;
 }
-
+ 
 .info-aboutus-title span {
     color: #A1C743;
 }
-
-.info-aboutus-text-content p {
-    font-size: 1.2rem;
-    max-width: 25rem;
-    padding-block: 0.8rem;
-}
-
+ 
+.info-aboutus-text-content p,
 .info-aboutus-text-content-left p {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+    max-width: 28rem;
+    line-height: 1.7;
+    padding-block: 0;
+}
+ 
+.info-aboutus-text-content-left h2,
+.info-aboutus-text-content-left p {
     text-align: right;
 }
 
-.info-aboutus-text-content-left h2 {
-    font-size: 2rem;
-    text-align: right;
+/* ===== Tablet (≤ 900px) ===== */
+@media (max-width: 900px) {
+    .shape {
+        opacity: 0.55;
+    }
+ 
+    .info-aboutus-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+ 
+    /* La segunda sección entra invertida en desktop (texto-izq/img-der),
+       en móvil queremos: imagen arriba, texto abajo siempre */
+    .info-aboutus-wrapper--reverse {
+        flex-direction: column-reverse;
+    }
+ 
+    .info-aboutus-img-content,
+    .info-aboutus-text-content,
+    .info-aboutus-text-content-left {
+        width: 100%;
+        padding: 0;
+    }
+ 
+    .info-aboutus-image {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+ 
+    .info-aboutus-text-content-left {
+        align-items: flex-start;
+    }
+ 
+    .info-aboutus-text-content-left h2,
+    .info-aboutus-text-content-left p {
+        text-align: left;
+    }
+ 
+    .info-aboutus-text-content p,
+    .info-aboutus-text-content-left p {
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-aboutus-image {
+        max-width: 100%;
+    }
+ 
+    .shape {
+        opacity: 0.35;
+    }
 }

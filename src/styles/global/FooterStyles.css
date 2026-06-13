@@ -218,6 +218,10 @@
         gap: 3rem;
     }
 
+    #footer-info-text-L {
+        flex: 1 1 0px !important;
+    }
+
     #colContacto {
         flex: 1 1 100%;
         padding-left: 0;

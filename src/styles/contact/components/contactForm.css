@@ -1,0 +1,104 @@
+/* ================================
+   FORMULARIO DE CONTACTO — responsivo
+   ================================ */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-row--split {
+    flex-direction: row;
+    gap: 1.25rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+    min-width: 0;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333333;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1D83E2;
+    box-shadow: 0 0 0 3px rgba(29, 131, 226, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-submit {
+    align-self: flex-start;
+    background-color: #1D83E2;
+    color: white;
+    padding: 0.85rem 2.25rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.form-submit:hover {
+    background-color: #1670c9;
+    transform: translateY(-2px);
+}
+
+.form-feedback {
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    min-height: 1.2rem;
+}
+
+.form-feedback.is-success {
+    color: #4a8c1c;
+    font-weight: 500;
+}
+
+/* ── Móvil (≤ 600px) ── */
+@media (max-width: 600px) {
+    .form-row--split {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .form-submit {
+        align-self: stretch;
+        text-align: center; 
+    }
+}

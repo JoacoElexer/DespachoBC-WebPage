@@ -1,0 +1,64 @@
+---
+import "../../styles/contact/components/contactForm.css";
+---
+
+<form class="contact-form" id="contactForm">
+    <div class="form-row">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+    </div>
+
+    <div class="form-row form-row--split">
+        <div class="form-field">
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+        </div>
+        <div class="form-field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+52 (477) 123 4567" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <label for="servicio">Servicio de interés</label>
+        <select id="servicio" name="servicio">
+            <option value="">Selecciona una opción</option>
+            <option value="contable">Servicio Contable</option>
+            <option value="fiscal">Servicios Fiscales</option>
+            <option value="capacitacion">Capacitación</option>
+            <option value="rrhh">Recursos Humanos</option>
+            <option value="laboral">Derecho Laboral</option>
+            <option value="corporativo">Derecho Corporativo</option>
+            <option value="otro">Otro</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+    </div>
+
+    <button type="submit" class="form-submit">Enviar mensaje</button>
+
+    <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const feedback = document.getElementById('formFeedback') as HTMLParagraphElement;
+
+    form?.addEventListener('submit', (e: SubmitEvent) => {
+        e.preventDefault();
+
+        // TODO: Conectar a un servicio de envío de formularios
+        // (Formspree, backend propio, etc.) Por ahora solo confirma visualmente.
+        feedback.textContent = '¡Gracias por contactarnos! Te responderemos a la brevedad.';
+        feedback.classList.add('is-success');
+        form.reset();
+
+        setTimeout(() => {
+            feedback.textContent = '';
+            feedback.classList.remove('is-success');
+        }, 6000);
+    });
+</script>

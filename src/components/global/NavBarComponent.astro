@@ -4,7 +4,7 @@ const navItems = [
     { name: 'Servicios', href: '/#services' },
     { name: 'Nosotros',  href: '/#about-us' }
 ];
-const contactLink = { name: 'Contacto', href: '#contacto' };
+const contactLink = { name: 'Contacto', href: '/contact' };
 const logo         = '/logo/Logo_BC_transparente.png';
 const whatsappIcon = '/assets/icons/whatsapp-logo.png';
 import '../../styles/global/NavBarStyles.css';
@@ -15,7 +15,9 @@ import '../../styles/global/NavBarStyles.css';
 
     <!-- Píldora: logo + links (desktop) -->
     <div class="navbarLinksContainer">
-        <img src={logo} alt="Despacho BC" class="navbarLogo" />
+        <a href="/">
+            <img src={logo} alt="Despacho BC" class="navbarLogo" />
+        </a>
         <div class="listContainer">
             <ul class="links">
                 {navItems.map(item => (

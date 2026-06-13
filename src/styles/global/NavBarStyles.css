@@ -106,6 +106,7 @@
     text-decoration: none;
     /* En desktop es visible */
     opacity: 0.95;
+    cursor: pointer;
 }
 
 .navbarContactBtn a {

@@ -1,4 +1,107 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactFormComponent from '../components/contact/contactFormComponent.astro';
+
+const telIcon      = '/assets/icons/phone.png';
+const locationIcon = '/assets/icons/map-pin.png';
+const emailIcon    = '/assets/icons/envelope-simple.png';
+
+import "../styles/contact/pages/contact.css";
 ---
 
+<BaseLayout title="Contacto — Despacho BC">
+
+    <!-- ── Header ── -->
+    <section class="contact-page-header">
+        <div class="shapeWrapper">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="contact-page-header-content">
+            <span class="contact-page-eyebrow">Contacto</span>
+            <h1 class="contact-page-title">
+                Estamos para <span>ayudarte</span>
+            </h1>
+            <p class="contact-page-subtitle">
+                Escríbenos y un especialista de Despacho BC se pondrá en
+                contacto contigo a la brevedad.
+            </p>
+        </div>
+    </section>
+
+    <!-- ── Formulario + Información ── -->
+    <section class="contact-main-section">
+        <div class="contact-main-wrapper">
+
+            <div class="contact-form-card">
+                <h2 class="contact-form-title">Envíanos un mensaje</h2>
+                <ContactFormComponent />
+            </div>
+
+            <div class="contact-info-card">
+                <h2 class="contact-info-title">Información de contacto</h2>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <img src={telIcon} alt="" />
+                    </div>
+                    <div class="contact-info-text">
+                        <h3>Teléfonos</h3>
+                        <p>+52 (477) 658 9123 - Whatsapp</p>
+                        <p>+52 (477) 1234567 - Llamadas</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <img src={locationIcon} alt="" />
+                    </div>
+                    <div class="contact-info-text">
+                        <h3>Ubicación</h3>
+                        <p>
+                            C. Rosendo Gutiérrez de Velazco 216, La Alameda,
+                            37204 León de los Aldama, Gto., México
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <img src={emailIcon} alt="" />
+                    </div>
+                    <div class="contact-info-text">
+                        <h3>Correo</h3>
+                        <p>contabilidad@despachobc.com</p>
+                        <p>gerencia@despachobc.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <img src={telIcon} alt="" />
+                    </div>
+                    <div class="contact-info-text">
+                        <h3>Horario de atención</h3>
+                        <p>Lunes a Viernes: 9:00 a.m. – 6:00 p.m.</p>
+                        <p>Sábados: 9:00 a.m. – 1:00 p.m.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Mapa ── -->
+    <section class="contact-map-section">
+        <div class="contact-map-wrapper">
+            <iframe
+                class="contact-map-iframe"
+                title="Ubicación Despacho BC"
+                src="https://www.google.com/maps?q=C.+Rosendo+Guti%C3%A9rrez+de+Velazco+216,+La+Alameda,+37204+Le%C3%B3n+de+los+Aldama,+Gto.&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+    </section>
+
+</BaseLayout>

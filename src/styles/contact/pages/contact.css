@@ -1,0 +1,202 @@
+/* ================================
+   CONTACT PAGE — responsivo
+   ================================ */
+
+/* ===== Header (mismo patrón que categoryPage) ===== */
+.contact-page-header {
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 8% 4rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.contact-page-header .shapeWrapper {
+    position: absolute;
+    overflow: visible;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contact-page-header .shape {
+    width: 18%;
+    height: 110%;
+    background: #A1C743;
+    transform: skew(-20deg);
+    top: 0;
+    position: absolute;
+    opacity: 0.18;
+}
+
+.contact-page-header .shape-1 { left: -6%; }
+.contact-page-header .shape-2 { left: 90%; }
+
+.contact-page-header-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-width: 640px;
+}
+
+.contact-page-eyebrow {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1D83E2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.contact-page-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.15;
+}
+
+.contact-page-title span {
+    color: #9AC433;
+    font-weight: 500;
+}
+
+.contact-page-subtitle {
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* ===== Sección principal: form + info ===== */
+.contact-main-section {
+    padding: clamp(2.5rem, 5vw, 5rem) clamp(1.5rem, 6vw, 8%);
+    background-color: #fafafa;
+}
+
+.contact-main-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.contact-form-card,
+.contact-info-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.contact-form-card {
+    flex: 1.4;
+    min-width: 0;
+}
+
+.contact-info-card {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.contact-form-title,
+.contact-info-title {
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+/* ===== Items de información ===== */
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-info-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #1D83E2;
+    flex-shrink: 0;
+}
+
+.contact-info-icon img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.contact-info-text h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    color: #1a1a1a;
+}
+
+.contact-info-text p {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* ===== Mapa ===== */
+.contact-map-section {
+    padding: 0 0 clamp(2.5rem, 5vw, 5rem);
+    background-color: #fafafa;
+}
+
+.contact-map-wrapper {
+    width: 100%;
+    height: clamp(280px, 40vw, 420px);
+    overflow: hidden;
+}
+
+.contact-map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* ===== Tablet (≤ 960px) ===== */
+@media (max-width: 960px) {
+    .contact-main-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-form-card,
+    .contact-info-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* ===== Móvil (≤ 600px) ===== */
+@media (max-width: 600px) {
+    .contact-page-header {
+        padding: 6rem 6% 3rem;
+    }
+
+    .contact-main-section {
+        padding: 2rem 5%;
+    }
+
+    .contact-form-card,
+    .contact-info-card {
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .contact-info-card {
+        gap: 1.25rem;
+    }
+}
